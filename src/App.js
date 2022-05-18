@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { getProducts } from './api';
 
-function App() {
+import Home from "./pages/Home"
+import Products from './pages/Products';
+import './App.css';
+import SaleProduct from './pages/SaleProduct';
+import NAvBar from './components/NavBar';
+import NoutFound from './pages/NotFound';
+import About from './pages/About';
+
+export default function App() {
+  const[prod, setProd] = useState([])
+
+  async function handleGetProducts() {
+    const res = await getProducts()
+    setProd(res)
+  }
+  handleGetProducts()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NAvBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/products' element={<Products products={prod}/>}/>
+        <Route path='/sale' element={<SaleProduct/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/*' element={<NoutFound/>}/>
+      </Routes>
+    </>
   );
 }
-
-export default App;
