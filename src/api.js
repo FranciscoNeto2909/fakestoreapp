@@ -4,16 +4,15 @@ const categories = "https://fakestoreapi.com/products/categories"
 
 export async function getProducts() {
     const res = await axios.get(products)
-    const data = await res.data
-    return data
+    return await res.data
 }
 export async function setProduct(prod) {
     await axios.post("https://fakestoreapi.com/products",prod)
     .then(prod => console.log(prod))
     .catch(err => console.error(err))
 }
+
 export async function getCategories() {
     await axios.get(categories)
     .then(cat => cat.data)
 }
-getProducts()

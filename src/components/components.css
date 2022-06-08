@@ -41,5 +41,23 @@
     flex-direction: column;
 }
 .nav-container{
+    height: 35px;
     color: #fff;
+    box-shadow: 2px 0 8px rgba(255, 255, 255, 0.342);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.routes-list{
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+.list-item-link{
+    color:#fff;
+    padding: 5px;
+}
+.list-item-link:hover{
+    background-color: rgba(255, 255, 255, 0.308);
+    border-radius: 5px;
 }
