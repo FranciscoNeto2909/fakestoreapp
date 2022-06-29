@@ -5,7 +5,6 @@ import { getProducts } from './api';
 import Home from "./pages/Home"
 import Products from './pages/Products';
 import './App.css';
-import SaleProduct from './pages/SaleProduct';
 import NAvBar from './components/NavBar';
 import NoutFound from './pages/NotFound';
 import About from './pages/About';
@@ -24,7 +23,6 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<Products products={prod}/>}/>
-        <Route path='/sale' element={<SaleProduct/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/*' element={<NoutFound/>}/>
       </Routes>

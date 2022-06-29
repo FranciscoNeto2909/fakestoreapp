@@ -11,9 +11,6 @@ export default function NAvBar() {
                     <Link to="/products" className="list-item-link">Products</Link>
                     </li>
                 <li className="list-item">
-                    <Link to="/sale" className="list-item-link">Sale area</Link>
-                    </li>
-                <li className="list-item">
                     <Link to="/about" className="list-item-link">About</Link>
                     </li>
             </ul>

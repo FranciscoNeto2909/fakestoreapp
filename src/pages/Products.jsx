@@ -3,7 +3,6 @@ import ProductsCard from "../components/ProductsCard"
 import "./pages.css" 
 
 export default function Products({products}) {
-
     const [category, setCategory]= useState("")
     const filterProducts = products.filter(prod => prod.category.includes(category))
     
