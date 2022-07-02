@@ -8,6 +8,7 @@ import './App.css';
 import NAvBar from './components/NavBar';
 import NoutFound from './pages/NotFound';
 import About from './pages/About';
+import BoughtAlert from './components/BoughtAlert';
 
 export default function App() {
   const[prod, setProd] = useState([])
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <>
     <NAvBar/>
+    <BoughtAlert/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<Products products={prod}/>}/>

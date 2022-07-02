@@ -8,7 +8,6 @@ export default function Products({products}) {
     
     return(
         <>
-        <h2>Produtos</h2>
         <select value={category} onChange={e => setCategory(e.target.value)}>
         <option value="">todos</option>
         <option value="electronics">Eletronic</option>
