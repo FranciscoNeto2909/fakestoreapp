@@ -182,6 +182,9 @@
     }
 }
 @media (max-width : 500px) {
+    .routes-list{
+        width: 250px;
+    }
     .buyCard-img{
         height: 150px;
         width: 150px;

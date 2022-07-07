@@ -4,7 +4,7 @@ import ProductsCard from "../components/ProductsCard"
 import Loader from "../components/Loader"
 import "./pages.css" 
 
-export default function Products({products}) {
+export default function Products() {
     const {data, isLoading, isSuccess} = useGetProductsQuery()
     const [category, setCategory]= useState("")
 
