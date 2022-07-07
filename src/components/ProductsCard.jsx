@@ -1,10 +1,13 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import "./components.css"
-
+import { addItem, removeItem } from "../services/slice"
 import BuyCard from "./BuyCard"
-import { cart, remToCart, setToCart } from "../cartObj"
 
 export default function ProductsCard({ prod, i }) {
+    const dispatch = useDispatch()
+    const cart = useSelector(data => data.cart.cart)
+
     const [selected, setSelected] = useState(false)
     const [cartImg, setCartImg] = useState("https://i.pinimg.com/originals/12/b0/7d/12b07d7d7dbde76a3a687552d50d397f.png")
     function handleSelected() {
@@ -16,18 +19,17 @@ export default function ProductsCard({ prod, i }) {
 
         if (cartImg === cartImg1) {
             setCartImg(cartImg2)
-        } else{
+        } else {
             setCartImg(cartImg1)
         }
     }
     function handleAddToCart() {
         hadleChangeCartImg()
-        if (cart.includes(prod) ) {
-            remToCart(prod)
-        }else{
-            setToCart(prod)
+        if (!cart.includes(prod)) {
+            dispatch(addItem(prod))
+        } else {
+            dispatch(removeItem(prod))
         }
-        console.log(cart)
     }
     return (
         <>
@@ -38,8 +40,8 @@ export default function ProductsCard({ prod, i }) {
                     <p className="prod-price">R$:
                         <span className="prod-price--green">{prod.price}</span>
                     </p>
-                    <button  className="card-cart" onClick={handleAddToCart}>
-                        <img src={cartImg} alt="cart" className="card-cart-img"/>
+                    <button className="card-cart" onClick={handleAddToCart}>
+                        <img src={cartImg} alt="cart" className="card-cart-img" />
                     </button>
                     <button className="card-btn" onClick={handleSelected}>Comprar</button>
                 </div>

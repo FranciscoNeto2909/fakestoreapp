@@ -28,3 +28,7 @@
 .not-found-text{
     width: 100px;
 }
+.cart{
+    display: flex;
+    justify-content: space-evenly;
+}
