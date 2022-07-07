@@ -5,7 +5,7 @@ import Loader from "../components/Loader"
 import "./pages.css" 
 
 export default function Products({products}) {
-    const {data, error, isLoading, isSuccess, isError} = useGetProductsQuery()
+    const {data, isLoading, isSuccess} = useGetProductsQuery()
     const [category, setCategory]= useState("")
 
     const filterProducts = data?.filter(prod => prod.category.includes(category))
