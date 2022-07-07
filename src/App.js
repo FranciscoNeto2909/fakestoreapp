@@ -9,7 +9,7 @@ import NAvBar from './components/NavBar';
 import NoutFound from './pages/NotFound';
 import About from './pages/About';
 import BoughtAlert from './components/BoughtAlert';
-
+import Cart from "./pages/Cart"
 export default function App() {
   const[prod, setProd] = useState([])
 
@@ -25,6 +25,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<Products products={prod}/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/*' element={<NoutFound/>}/>
       </Routes>

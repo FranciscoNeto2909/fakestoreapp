@@ -1,10 +1,14 @@
 import { useState } from "react"
+import {useGetProductsQuery} from "../services/Products"
 import ProductsCard from "../components/ProductsCard"
+import Loader from "../components/Loader"
 import "./pages.css" 
 
 export default function Products({products}) {
+    const {data, error, isLoading, isSuccess, isError} = useGetProductsQuery()
     const [category, setCategory]= useState("")
-    const filterProducts = products.filter(prod => prod.category.includes(category))
+
+    const filterProducts = data?.filter(prod => prod.category.includes(category))
     
     return(
         <>
@@ -16,8 +20,9 @@ export default function Products({products}) {
         <option value="women's clothing">Women's clothing</option>
         </select>
         <div className="container-prod">
+            {isLoading && <Loader/>}
             {
-                filterProducts.map((prod, i )=> <ProductsCard 
+                isSuccess && filterProducts.map((prod, i )=> <ProductsCard 
                 prod={prod} key={i}/>)
             }
         </div>

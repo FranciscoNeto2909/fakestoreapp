@@ -34,6 +34,19 @@
 .prod-price--off{
     color: #f00;
 }
+.card-cart{
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #008080;
+    border-radius: 5px;
+    padding: 2px;
+}
+.card-cart:hover{
+    cursor: pointer;
+}
+.card-cart-img{
+    height: 25px;
+}
 .card-btn{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
     font-weight: 600;
@@ -63,6 +76,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.cart-button{
+    position: absolute;
+    right: 5px;
+    background-color: transparent;
+    height: 40px;
+    padding: 5px 10px;
+    border: 0;
+}
+.cart-img{
+    height: 30px;
 }
 .routes-list{
     display: flex;
@@ -73,9 +98,10 @@
     color:#fff;
     padding: 10px;
 }
-.list-item-link:hover{
+.list-item-link:hover, .cart-button:hover{
     background-color: rgba(255, 255, 255, 0.308);
     border-radius: 5px;
+    cursor: pointer;
 }
 .buyCard-container{
     height: 100vh;
@@ -122,6 +148,38 @@
     border-radius: 5px;
     text-align: center;
     background: linear-gradient(to left,#008080ef, #00c0c0ef);
+}
+.loader{
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.loader-item{
+    height: 25px;
+    width: 5px;
+    background-color: #000;
+    border-radius: 5px;
+    animation: scale-up 2s ease-in-out infinite;
+}
+.loader-item--secund{
+    animation-delay: .3s;
+}
+.loader-item--third{
+    animation-delay: .6s;
+}
+
+@keyframes scale-up{
+    20%{
+        transform: scaleY(1.5);
+    }
+    60%{
+        transform: scaleY(1);
+    }
 }
 @media (max-width : 500px) {
     .buyCard-img{

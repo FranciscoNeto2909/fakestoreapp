@@ -15,6 +15,9 @@ export default function NAvBar() {
                     <Link to="/about" className="list-item-link">About</Link>
                     </li>
             </ul>
+            <Link to="/cart" className="cart-button">
+                <img src="https://rededsgpoupebrasil.com.br//imagens/image/servicos//carrinho-icone.png" className="cart-img" alt="" />
+            </Link>
         </nav>
     )
 }
