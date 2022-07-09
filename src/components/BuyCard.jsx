@@ -1,12 +1,21 @@
 import "./components.css"
+import { useDispatch } from "react-redux"
+import {showMessage,hideMessage, setMessage} from "../services/slice"
+
 
 export default function BuyCard({ prod, handleSelected }) {
-    function handleBuy() {
-        document.querySelector(".boughtAlert-container").style.display = "block"
+    const dispath = useDispatch()
+    function handleShowMessage(text){
+        dispath(showMessage())
+        dispath(setMessage(text))
         handleSelected()
         setTimeout(() => {
-            document.querySelector(".boughtAlert-container").style.display = "none"
+            dispath(hideMessage())
         }, 3000);
+    }
+    function handleBuy() {
+        handleShowMessage("Produto comprado com sucesso!")
+        handleSelected()
     }
     return (
         <div className="buyCard-container">

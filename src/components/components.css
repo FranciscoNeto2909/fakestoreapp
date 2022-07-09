@@ -135,13 +135,13 @@
     width: 200px;
     margin: 0 auto;
 }
-.boughtAlert-container{
-    width: 100vw;
+.message-container{
+    width: 95vw;
+    padding-left: 5vw;
     top: 40px;
     position: absolute;
-    display: none;
 }
-.boughtAlert{
+.message{
     width: 80vw;
     margin: 0 auto;
     padding: 10px;

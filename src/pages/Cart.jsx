@@ -3,7 +3,7 @@ import { useSelector } from "react-redux/";
 import ProductsCard from "../components/ProductsCard";
 import "./pages.css"
 export default function Cart() {
-    const cart = useSelector(data => data.cart.cart)
+    const cart = useSelector(data => data.app.cart)
     return (
         <>
             <h1>cart</h1>
