@@ -2,29 +2,37 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: "app",
-    initialState:{
-        cart:[],
-        isMessage:false,
-        message : ""
+    initialState: {
+        cart: [],
+        isMessage: false,
+        isModalOpened: false,
+        message: ""
     },
     reducers: {
-        addItem(state, {payload}){
+        addItem(state, { payload }) {
             state.cart.push(payload)
         },
-        removeItem(state,{payload}){
+        removeItem(state, { payload }) {
             state.cart = state.cart.filter(prod => prod.id !== payload.id)
         },
-        showMessage(state){
+        showMessage(state) {
             state.isMessage = true
         },
-        hideMessage(state){
+        hideMessage(state) {
             state.isMessage = false
         },
-        setMessage(state, {payload}){
+        showModal(state) {
+            state.isModalOpened = true
+        },
+        hideModal(state) {
+            state.isModalOpened = false
+        },
+
+        setMessage(state, { payload }) {
             state.message = payload
         }
     }
 })
 
-export const {addItem, removeItem, showMessage, hideMessage, setMessage} = cartSlice.actions
+export const { addItem, removeItem, showMessage, hideMessage, setMessage, showModal, hideModal } = cartSlice.actions
 export default cartSlice.reducer

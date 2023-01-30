@@ -1,6 +1,23 @@
+.products, .home, .about, .cart-container{
+    margin-top: 55px;
+}
+.home-resume{
+    margin-top: 10px;
+}
+.select-container{
+    width: 100%;
+    position: fixed;
+    top: 49px;
+    background: #131313;
+    z-index: 1;
+    padding-bottom: 5px;
+}
+
 .container-prod{
-    height: 100vh;
+    height: 90vh;
+    margin-top: 70px;
     display: flex;
+    gap: 2px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -31,4 +48,15 @@
 .cart{
     display: flex;
     justify-content: space-evenly;
+}
+.hidden{
+    overflow: hidden;
+    height: 90vh;
+    margin-top: 0;
+}
+
+@media (max-width:500px){
+    .hidden{
+        height: 99vh;
+    }
 }

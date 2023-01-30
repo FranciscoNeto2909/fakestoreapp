@@ -76,7 +76,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background: #000;
 }
 .cart-button{
     position: absolute;
@@ -106,6 +109,7 @@
 .buyCard-container{
     height: 100vh;
     width: 100vw;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,6 +144,7 @@
     padding-left: 5vw;
     top: 40px;
     position: absolute;
+    z-index: 2;
 }
 .message{
     width: 80vw;
@@ -153,18 +158,17 @@
     margin-top: 5px;
     height: 50px;
     width: 50px;
-    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-radius: 5px;
 }
 .loader-item{
-    height: 25px;
-    width: 5px;
-    background-color: #000;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
     border-radius: 5px;
-    animation: scale-up 2s ease-in-out infinite;
+    animation: scale-up 2s infinite;
 }
 .loader-item--secund{
     animation-delay: .3s;
@@ -172,13 +176,9 @@
 .loader-item--third{
     animation-delay: .6s;
 }
-
 @keyframes scale-up{
     20%{
-        transform: scaleY(1.5);
-    }
-    60%{
-        transform: scaleY(1);
+        transform: translateY(-10px);
     }
 }
 @media (max-width : 500px) {

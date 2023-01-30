@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "./components.css"
-import { addItem, removeItem, showMessage, hideMessage,setMessage } from "../services/slice"
+import { addItem, removeItem, showMessage, hideMessage,setMessage, showModal, hideModal } from "../services/slice"
 import BuyCard from "./BuyCard"
 
 export default function ProductsCard({ prod, i }) {
@@ -9,10 +9,12 @@ export default function ProductsCard({ prod, i }) {
     const cart = useSelector(data => data.app.cart)
 
     const [selected, setSelected] = useState(false)
+
     const [cartImg, setCartImg] = useState("https://i.pinimg.com/originals/12/b0/7d/12b07d7d7dbde76a3a687552d50d397f.png")
-    function handleSelected() {
+    function handleSelect() {
         setSelected(!selected)
     }
+
     function handleShowMessage(text) {
         dispatch(showMessage())
         dispatch(setMessage(text))
@@ -40,6 +42,10 @@ export default function ProductsCard({ prod, i }) {
             handleShowMessage("Produto removido do carrinho")
         }
     }
+    useEffect(()=>{
+        selected === true ? dispatch(showModal()) : dispatch(hideModal())
+
+    },[selected])
     return (
         <>
             <div className="card" key={i}>
@@ -52,12 +58,12 @@ export default function ProductsCard({ prod, i }) {
                     <button className="card-cart" onClick={handleAddToCart}>
                         <img src={cartImg} alt="cart" className="card-cart-img" />
                     </button>
-                    <button className="card-btn" onClick={handleSelected}>Comprar</button>
+                    <button className="card-btn" onClick={handleSelect}>Comprar</button>
                 </div>
             </div>
             {
                 selected &&
-                <BuyCard prod={prod} handleSelected={handleSelected} />
+                <BuyCard prod={prod} handleSelected={handleSelect} />
             }
         </>
     )
