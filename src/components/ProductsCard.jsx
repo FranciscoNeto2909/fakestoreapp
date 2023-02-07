@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "./components.css"
 import { addItem, removeItem, showMessage, hideMessage,setMessage, showModal, hideModal } from "../services/slice"
-import BuyCard from "./BuyCard"
 
 export default function ProductsCard({ prod, i }) {
     const dispatch = useDispatch()
@@ -45,7 +44,7 @@ export default function ProductsCard({ prod, i }) {
     useEffect(()=>{
         selected === true ? dispatch(showModal()) : dispatch(hideModal())
 
-    },[selected])
+    },[selected, dispatch])
     return (
         <>
             <div className="card" key={i}>
@@ -61,10 +60,6 @@ export default function ProductsCard({ prod, i }) {
                     <button className="card-btn" onClick={handleSelect}>Comprar</button>
                 </div>
             </div>
-            {
-                selected &&
-                <BuyCard prod={prod} handleSelected={handleSelect} />
-            }
         </>
     )
 }

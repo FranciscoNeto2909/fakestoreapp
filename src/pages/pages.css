@@ -1,10 +1,20 @@
-.products, .home, .about, .cart-container{
+.products,
+.home,
+.about,
+.cart-container {
     margin-top: 55px;
 }
-.home-resume{
-    margin-top: 10px;
+
+.home {
+    overflow-x: hidden;
 }
-.select-container{
+
+.home-resume {
+    margin: 10px 0;
+    font-size: .9rem;
+}
+
+.select-container {
     width: 100%;
     position: fixed;
     top: 49px;
@@ -13,7 +23,7 @@
     padding-bottom: 5px;
 }
 
-.container-prod{
+.container-prod {
     height: 90vh;
     margin-top: 70px;
     display: flex;
@@ -21,7 +31,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.page-container{
+
+.page-container {
     height: 90vh;
     width: 100%;
     display: flex;
@@ -29,7 +40,8 @@
     align-items: center;
     justify-content: center;
 }
-.not-found{
+
+.not-found {
     height: 250px;
     width: 300px;
     border: 2px solid #fff;
@@ -38,25 +50,56 @@
     align-items: center;
     justify-content: space-around;
 }
-.not-found-img{
+
+.not-found-img {
     height: 100px;
     border-radius: 20px;
 }
-.not-found-text{
+
+.not-found-text {
     width: 100px;
 }
-.cart{
+
+.cart {
     display: flex;
     justify-content: space-evenly;
 }
-.hidden{
+
+.hidden {
     overflow: hidden;
     height: 90vh;
     margin-top: 0;
 }
 
-@media (max-width:500px){
-    .hidden{
+.carroussel {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    animation: move 5s ease-in-out infinite 2s;
+    transform: translateX(150px);
+}
+
+
+@media (max-width:500px) {
+    .hidden {
         height: 99vh;
+    }
+    .home-emphasis{
+        margin: 50px 0 10px 0;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(150px);
+        }
+
+        50% {
+            transform: translateX(-150px);
+
+        }
+
+        100% {
+            transform: translateX(150px);
+        }
     }
 }

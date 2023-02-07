@@ -1,8 +1,7 @@
 .card{
-    height: 240px;
-    width: 170px;
+    height: 270px;
+    width: 180px;
     margin: 10px 0;
-    padding: 5px;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 2px;
     display: flex;
@@ -14,18 +13,20 @@
     text-align: center;
 }
 .card-img{
-    height: 110px;
-    margin-top: 5px;
-    width: 85%;
+    height: 125px;
+    width: 100%;
     border-radius: 5px;
 }
 .card-info{
     width: 100%;
+    padding: 5px;
     margin-bottom: 2px;
     display: flex;
     justify-content: space-around;
+    gap: 2px;
 }
 .prod-price{
+    margin-top: 10px;
     font-size: 14px;
 }
 .prod-price--green{
