@@ -10,16 +10,12 @@ export default function Products() {
     const [category, setCategory] = useState("")
     const [filteredProducts, setFilteredProducts] = useState({})
 
-    function handleFilterProducts() {
+    useEffect(() => {
         if (products.length > 0 && category !== "") {
             setFilteredProducts(products.filter(prod => prod.category === category))
         } else if (products.length > 0 && category === "") {
             setFilteredProducts(products)
         }
-    }
-
-    useEffect(() => {
-        handleFilterProducts()
     }, [products, category])
 
     return (
