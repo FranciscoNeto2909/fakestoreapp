@@ -29,10 +29,14 @@ export default function Products() {
                     <option value="women's clothing">Women's clothing</option>
                 </select>
             </div>
+            {filteredProducts.length === undefined &&
+                <div className="loader-container">
+                    <Loader />
+                </div>}
             <div className="container-prod">
-                {filteredProducts.length > 0 ?
+                {filteredProducts.length > 0 &&
                     filteredProducts.map((prod, i) => <ProductsCard
-                        prod={prod} key={i} />) : <Loader />
+                        prod={prod} key={i} />)
                 }
             </div>
         </div>

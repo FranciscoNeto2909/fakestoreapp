@@ -7,6 +7,8 @@
 
 .home {
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-resume {
@@ -23,10 +25,20 @@
     padding-bottom: 5px;
 }
 
+.loader-container {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
 .container-prod {
     height: 90vh;
     margin-top: 70px;
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
@@ -82,15 +94,55 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     .container-prod {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .carroussel {
+        animation: move 2s ease-in-out infinite 2s;
+        transform: translateX(25px);
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(25px);
+        }
+
+        50% {
+            transform: translateX(-25px);
+
+        }
+
+        100% {
+            transform: translateX(25px);
+        }
     }
 }
 
 @media (max-width: 600px) {
     .container-prod {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carroussel {
+        animation: move 4s ease-in-out infinite 2s;
+        transform: translateX(75px);
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(75px);
+        }
+
+        50% {
+            transform: translateX(-75px);
+
+        }
+
+        100% {
+            transform: translateX(75px);
+        }
     }
 }
 
@@ -102,7 +154,7 @@
         margin-top: 15px;
     }
 
-    .products{
+    .products {
         margin-top: 35px;
     }
 
@@ -129,7 +181,7 @@
     }
 
     .carroussel {
-        animation: move 5s ease-in-out infinite 2s;
+        animation: move 6s ease-in-out infinite 2s;
         transform: translateX(160px);
     }
 
@@ -138,9 +190,16 @@
             transform: translateX(160px);
         }
 
-        50% {
-            transform: translateX(-160px);
+        10% {
+            transform: translateX(160px);
+        }
 
+        40% {
+            transform: translateX(-160px);
+        }
+
+        60% {
+            transform: translateX(-160px);
         }
 
         100% {
