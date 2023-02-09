@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "./components.css"
-import { addItem, removeItem, showMessage, hideMessage,setMessage, showModal, hideModal } from "../services/slice"
+import { addItem, removeItem, showMessage, hideMessage, setMessage } from "../services/slice"
+import { setProductToBuy } from "../services/productsSlice"
 
 export default function ProductsCard({ prod, i }) {
     const dispatch = useDispatch()
     const cart = useSelector(data => data.app.cart)
 
-    const [selected, setSelected] = useState(false)
-
     const [cartImg, setCartImg] = useState("https://i.pinimg.com/originals/12/b0/7d/12b07d7d7dbde76a3a687552d50d397f.png")
+
     function handleSelect() {
-        setSelected(!selected)
+        dispatch(setProductToBuy(prod))
     }
 
     function handleShowMessage(text) {
@@ -41,10 +41,7 @@ export default function ProductsCard({ prod, i }) {
             handleShowMessage("Produto removido do carrinho")
         }
     }
-    useEffect(()=>{
-        selected === true ? dispatch(showModal()) : dispatch(hideModal())
 
-    },[selected, dispatch])
     return (
         <>
             <div className="card" key={i}>

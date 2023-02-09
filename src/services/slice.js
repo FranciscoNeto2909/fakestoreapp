@@ -21,18 +21,11 @@ const cartSlice = createSlice({
         hideMessage(state) {
             state.isMessage = false
         },
-        showModal(state) {
-            state.isModalOpened = true
-        },
-        hideModal(state) {
-            state.isModalOpened = false
-        },
-
         setMessage(state, { payload }) {
             state.message = payload
         }
     }
 })
 
-export const { addItem, removeItem, showMessage, hideMessage, setMessage, showModal, hideModal } = cartSlice.actions
+export const { addItem, removeItem, showMessage, hideMessage, setMessage } = cartSlice.actions
 export default cartSlice.reducer

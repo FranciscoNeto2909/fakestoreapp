@@ -9,15 +9,23 @@ export const getProducts = createAsyncThunk("getProducts", async () => {
 const productsSlice = createSlice({
     name: "products",
     initialState: {
-        products: {}
+        products: {},
+        productToBuy: []
     },
-    reducers: {},
+    reducers: {
+        setProductToBuy: (state, { payload }) => {
+            return { ...state, productToBuy: [payload] }
+        },
+        removeProductToBuy: (state) => {
+            return { ...state, productToBuy: {} }
+        }
+    },
     extraReducers: bulider => {
         bulider
-            .addCase(getProducts.fulfilled, (state, {payload}) => {
-                return {...state, products:payload}
+            .addCase(getProducts.fulfilled, (state, { payload }) => {
+                return { ...state, products: payload }
             })
     },
 })
-
+export const { setProductToBuy, removeProductToBuy } = productsSlice.actions
 export default productsSlice.reducer

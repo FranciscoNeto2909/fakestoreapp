@@ -11,25 +11,27 @@ import Cart from "./pages/Cart"
 import './App.css';
 import { useEffect } from 'react';
 import { getProducts } from './services/productsSlice';
-
+import BuyCard from "./components/BuyCard"
 export default function App() {
   const isMsg = useSelector(data => data.app.isMessage)
+  const prod = useSelector(data => data.products.productToBuy)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getProducts())
-  },[dispatch])
+  }, [dispatch])
 
   return (
     <>
-    <NavBar/>
-    {isMsg && <Message/>}
+      <NavBar />
+      {isMsg && <Message />}
+      {prod.length > 0 && <BuyCard />}
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/*' element={<NoutFound/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/*' element={<NoutFound />} />
       </Routes>
     </>
   );
