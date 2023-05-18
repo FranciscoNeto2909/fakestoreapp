@@ -25,7 +25,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .prod-price {
@@ -183,7 +183,7 @@
     color: #000;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 15px;
 }
 
@@ -205,7 +205,7 @@
     border: none;
     border-bottom: 1px solid #969696;
     outline: none;
-    text-align: start;
+    text-align: flex-start;
     margin-left: 5px;
     padding-left: 2px;
 }
@@ -213,7 +213,7 @@
 .buyCard-paymethod{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .buyCard-paymethod-options{
@@ -233,7 +233,7 @@
 
 .buyCard-buttons{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .buyCard-btn-buy{
