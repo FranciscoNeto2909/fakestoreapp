@@ -82,6 +82,7 @@
     border: none;
     color: #f00;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .card-btn-closeimg {
@@ -298,7 +299,7 @@
 
     .card {
         height: 350px;
-        width: 290px;
+        min-width: 290px;
         padding: 10px;
     }
 
@@ -332,6 +333,10 @@
     .routes-list {
         width: 250px;
         margin-right: 25px;
+    }
+
+    .buyCard{
+        width: 95%;
     }
 
     .buyCard-img {
