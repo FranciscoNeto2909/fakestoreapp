@@ -12,6 +12,7 @@ import './App.css';
 import { useEffect } from 'react';
 import { getProducts } from './services/productsSlice';
 import BuyCard from "./components/BuyCard"
+import PurchasedProducts from './pages/PurchasedProducts';
 export default function App() {
   const isMsg = useSelector(data => data.app.isMessage)
   const prod = useSelector(data => data.products.productToBuy)
@@ -29,6 +30,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
+        <Route path='/products/purchased' element={<PurchasedProducts />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/about' element={<About />} />
         <Route path='/*' element={<NoutFound />} />

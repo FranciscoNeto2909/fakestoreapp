@@ -19,8 +19,8 @@
 .select-container {
     position: fixed;
     top: 15px;
-    right: 75px;
-    background: #131313;
+    right: 100px;
+    background: transparent;
     z-index: 1;
     padding-bottom: 5px;
 }
@@ -88,12 +88,25 @@
     gap: 10px;
 }
 
+.purchased-cancel-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: rgb(255, 0, 0);
+}
+
+.about-link {
+    color: #00c0c0ef;
+}
+
 @media (max-width:500px) {
 
     .home,
     .about,
     .cart-container {
         margin-top: 15px;
+        padding: 0 16px;
     }
 
     .products {
@@ -122,25 +135,28 @@
     }
 
     .carroussel {
-        padding: 0 10px;
         justify-content: flex-start;
         animation: move 9s ease-in-out infinite 2s;
     }
 
     @keyframes move {
-        0%{
+        0% {
             transform: translateX(0px);
         }
-        20%{
+
+        20% {
             transform: translateX(0px);
         }
-        50%{
+
+        50% {
             transform: translateX(-820px);
         }
-        60%{
+
+        60% {
             transform: translateX(-820px);
         }
-        100%{
+
+        100% {
             transform: translateX(0px);
         }
     }

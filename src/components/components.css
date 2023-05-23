@@ -42,7 +42,6 @@
     margin-left: 5px;
 }
 
-
 .card-cart {
     height: 30px;
     background-color: transparent;
@@ -100,7 +99,7 @@
     color: #fff;
     box-shadow: 2px 0 8px rgba(255, 255, 255, 0.342);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
@@ -109,7 +108,6 @@
 }
 
 .cart-button {
-    position: absolute;
     right: 20px;
     background-color: transparent;
     height: 40px;
@@ -121,6 +119,14 @@
     height: 30px;
 }
 
+.card-prices{
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .routes-list {
     display: flex;
     width: 300px;
@@ -130,6 +136,7 @@
 .list-item-link {
     color: #fff;
     padding: 10px;
+    position: relative;
 }
 
 .list-item-link:hover,
@@ -242,6 +249,36 @@
     margin: 0 auto;
 }
 
+.purchased-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.purchased{
+    height: 400px;
+}
+
+.purchased-img{
+    height: 30px;
+}
+
+.purchased-icons{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.purchased-link{
+    display: flex;
+    padding: 5px 10px;
+}
+
+.purchased-notice{
+    margin-top: 60px;
+}
+
 .message-container {
     width: 95vw;
     padding-left: 5vw;
@@ -295,12 +332,18 @@
     .nav-container {
         top: unset;
         bottom: -1px;
+        align-items: center;
+        justify-content: baseline;
     }
-
+    
     .card {
         height: 350px;
         min-width: 290px;
         padding: 10px;
+    }
+
+    .purchased{
+        height: 400px;
     }
 
     .card-title {
@@ -322,6 +365,10 @@
         transform: scale(1.2);
     }
 
+    .purchased-title{
+        text-align: start;
+    }
+
     .prod-price {
         font-size: 18px;
     }
@@ -331,8 +378,9 @@
     }
 
     .routes-list {
-        width: 250px;
         margin-right: 25px;
+        align-items: center;
+        padding-left: 40px;
     }
 
     .buyCard{
@@ -346,5 +394,9 @@
 
     .buyCard-prod-desc {
         font-size: 12px;
+    }
+
+    .purchased-notice{
+        margin-top: 16px;
     }
 }

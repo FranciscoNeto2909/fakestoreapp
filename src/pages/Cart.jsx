@@ -8,9 +8,11 @@ export default function Cart() {
         <div className="cart-container">
             <h1>Carrinho</h1>
             <div className="cart">
-                {cart.length > 0 && cart.map((prod,i) => (
+                {cart.length > 0 ? cart.map((prod, i) => (
                     <ProductsCard prod={prod} key={i} />
-                ))}
+                )) :
+                <p>Seus produtos adicionados ao carrinho aparecerão aqui</p> 
+                }
             </div>
         </div>
     )

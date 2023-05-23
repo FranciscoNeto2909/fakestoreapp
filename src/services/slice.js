@@ -4,6 +4,7 @@ const cartSlice = createSlice({
     name: "app",
     initialState: {
         cart: [],
+        purchasedProducts:[],
         isMessage: false,
         isModalOpened: false,
         message: ""
@@ -14,6 +15,12 @@ const cartSlice = createSlice({
         },
         removeItem(state, { payload }) {
             state.cart = state.cart.filter(prod => prod.id !== payload.id)
+        },
+        addPurchasedProduct(state, { payload }) {
+            state.purchasedProducts.push(payload)
+        },
+        removePurchasedProduct(state, { payload }) {
+            state.purchasedProducts = state.purchasedProducts.filter(prod => prod.id !== payload)
         },
         showMessage(state) {
             state.isMessage = true
@@ -27,5 +34,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addItem, removeItem, showMessage, hideMessage, setMessage } = cartSlice.actions
+export const { addItem, removeItem, showMessage, hideMessage, setMessage, addPurchasedProduct, removePurchasedProduct } = cartSlice.actions
 export default cartSlice.reducer

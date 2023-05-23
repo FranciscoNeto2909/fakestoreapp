@@ -1,6 +1,6 @@
 import "./components.css"
 import { useDispatch, useSelector } from "react-redux"
-import { showMessage, hideMessage, setMessage } from "../services/slice"
+import { showMessage, hideMessage, setMessage, addPurchasedProduct } from "../services/slice"
 import { removeProductToBuy } from "../services/productsSlice"
 import { useEffect, useState } from "react"
 import { addItem, removeItem } from "../services/slice"
@@ -26,7 +26,21 @@ export default function BuyCard() {
     }
 
     function handleBuy() {
-        handleShowMessage("Produto comprado com sucesso!")
+        if (payMethod === "") {
+            dispatch(showMessage())
+            dispatch(setMessage("Escolha um metodo de pagamento válido!"))
+            setTimeout(() => {
+                dispatch(hideMessage())
+            }, 3000);
+        } else {
+            handleShowMessage("Produto comprado com sucesso!")
+            dispatch(addPurchasedProduct({
+                ...prod,
+                finalPrice,
+                amount,
+                payMethod
+            }))
+        }
     }
 
     function handleCancelBuy() {
@@ -110,7 +124,7 @@ export default function BuyCard() {
 
 
 
-                            <select name="" id="" select value={payMethod} onChange={e => setPayMethod(e.target.value)}>
+                            <select name="" id="" value={payMethod} onChange={e => setPayMethod(e.target.value)}>
                                 <option value="">Selecionar</option>
                                 <option value="pix">Pix</option>
                                 <option value="cartao">Cartão</option>
