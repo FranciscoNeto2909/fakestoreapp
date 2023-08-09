@@ -2,8 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Home from "./pages/Home"
-import Products from './pages/Products';
-import NavBar from './components/NavBar';
+import Header from './components/header/Header';
 import NoutFound from './pages/NotFound';
 import About from './pages/About';
 import Message from './components/Message';
@@ -24,12 +23,11 @@ export default function App() {
 
   return (
     <>
-      <NavBar />
+      <Header />
       {isMsg && <Message />}
       {prod.length > 0 && <BuyCard />}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
         <Route path='/products/purchased' element={<PurchasedProducts />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/about' element={<About />} />

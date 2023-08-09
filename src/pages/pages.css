@@ -1,9 +1,6 @@
 .products,
 .home,
 .about,
-.cart-container {
-    margin-top: 55px;
-}
 
 .home {
     overflow-x: hidden;
@@ -36,7 +33,7 @@
 
 .container-prod {
     width: 100%;
-    margin-top: 70px;
+    margin-top: 24px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

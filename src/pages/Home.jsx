@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import ProductsCard from "../components/ProductsCard"
 import Loader from "../components/Loader"
+import { useEffect, useState } from "react"
 export default function Home(params) {
-    const [prods, setProds] = useState({})
     const products = useSelector(data => data.products.products)
+    const [category] = useState("")
+    const [filteredProducts, setFilteredProducts] = useState({})
 
     useEffect(() => {
-        if (products.length > 0) {
-            setProds(products.slice(0, 4))
+        if (products.length > 0 && category !== "") {
+            setFilteredProducts(products.filter(prod => prod.category === category))
+        } else if (products.length > 0 && category === "") {
+            setFilteredProducts(products)
         }
-    }, [products])
+    }, [products, category])
 
     return (
         <div className="home">
-            <h2>Seja bem-vindo a nossa loja</h2>
-            <p className="home-resume">Aqui você encontrará os melhores produtos <br /> com os melhores preços para satisfazer todos os gostos.</p>
-            <h3 className="home-emphasis">Confira alguns de nossos destaque</h3>
-            {prods.length === undefined && <div className="loader-container">
-                <Loader />
-            </div>}
-            <div className="carroussel" >
-                {prods.length > 0 &&
-                    prods.map((prod, i) => (
-                        <ProductsCard key={i} prod={prod} />
-                    ))
+            {filteredProducts.length === undefined &&
+                <div className="loader-container">
+                    <Loader />
+                </div>}
+            <div className="container-prod">
+                {filteredProducts.length > 0 &&
+                    filteredProducts.map((prod, i) => <ProductsCard
+                        prod={prod} key={i} />)
                 }
             </div>
         </div>
