@@ -36,7 +36,7 @@
 
 .header-search {
     height: 40px;
-    min-width: 250px;
+    min-width: 200px;
     max-width: 444px;
     display: flex;
     background-color: #fff;
@@ -53,12 +53,12 @@
 
 .header-search-input {
     height: 40px;
+    width: 100%;
     font-size: 16px;
     flex-grow: 2;
     border: none;
     outline: none;
     text-align: start;
-
 }
 
 .input-focus {
@@ -269,6 +269,10 @@
     .header-logo {
         height: 40px;
         width: auto;
+    }
+
+    .header-search{
+        padding-left: 4px;
     }
 
     .header-menu {
