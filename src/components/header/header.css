@@ -255,6 +255,7 @@
 
 @media (max-width: 810px) {
     .header {
+        top: -1px;
         padding: 8px 0;
         height: 80px;
         gap: 4px 0;
