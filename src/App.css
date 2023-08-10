@@ -1,4 +1,5 @@
 .App {
-  text-align: center;
-  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 100px 1fr;
 }

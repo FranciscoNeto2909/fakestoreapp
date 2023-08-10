@@ -3,6 +3,7 @@ import logo from "../../images/logo.png"
 import { useEffect, useState } from "react"
 
 import { AiOutlineShoppingCart } from "react-icons/ai"
+import Menu from "../menu/Menu"
 
 export default function NavBar() {
     const [dropdownOpened, setDropdownOpened] = useState(false)
@@ -42,6 +43,9 @@ export default function NavBar() {
                 <span className={`header-menu-item ${menuOpened && "header-item-hiden"}`}></span>
                 <span className={`header-menu-item ${menuOpened && "header-item-line2"}`}></span>
             </div>
+            {
+                menuOpened && <Menu />
+            }
             <div className="header-anuncio">
                 <p className="header-anuncio-text-first">Faça login e obtena um cupom de</p>
                 <img className="header-anuncio-img" src="https://2.bp.blogspot.com/-i7KcLBYZ9Cw/VPOlbAu0L5I/AAAAAAAAEL8/e75x5MF8CLI/s1600/frete5.png" alt="" />

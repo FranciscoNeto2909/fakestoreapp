@@ -7,6 +7,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 4px 10px;
+    position: sticky;
+    top: 0;
 }
 
 .header-logo {
@@ -36,8 +38,8 @@
 
 .header-search {
     height: 40px;
-    min-width: 200px;
-    max-width: 444px;
+    width: 100%;
+    min-width: 230px;
     display: flex;
     background-color: #fff;
     overflow: hidden;
@@ -74,6 +76,7 @@
     width: 46px;
     border: none;
     background-color: transparent;
+    content: "";
 }
 
 .header-search-btn::before {
@@ -255,8 +258,9 @@
         padding: 8px 0;
         height: 80px;
         gap: 4px 0;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: repeat(2, 1fr);
+        align-items: center;
     }
 
     .header-anuncio,
@@ -271,7 +275,7 @@
         width: auto;
     }
 
-    .header-search{
+    .header-search {
         padding-left: 4px;
     }
 
@@ -289,15 +293,16 @@
     .header-menu-item {
         color: #fff;
         border: 1px solid;
-        transition: all 100ms ease-in-out;
     }
 
     .header-item-line1 {
-        transform: rotate(45deg) translateY(4px);
+        animation: line1 100ms ease-in-out;
+        animation-fill-mode: forwards;
     }
 
     .header-item-line2 {
-        transform: rotate(-45deg) translateY(-4px);
+        animation: line2 100ms ease-in-out;
+        animation-fill-mode: forwards;
     }
 
     .header-item-hiden {
@@ -322,5 +327,17 @@
 
     .header-cep {
         grid-column: span 3;
+    }
+}
+
+@keyframes line1 {
+    100% {
+        transform: rotate(45deg) translateY(4px);
+    }
+}
+
+@keyframes line2 {
+    100% {
+        transform: rotate(-45deg) translateY(-4px);
     }
 }

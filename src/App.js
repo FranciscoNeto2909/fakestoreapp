@@ -22,7 +22,7 @@ export default function App() {
   }, [dispatch])
 
   return (
-    <>
+    <div className='App'>
       <Header />
       {isMsg && <Message />}
       {prod.length > 0 && <BuyCard />}
@@ -33,6 +33,6 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/*' element={<NoutFound />} />
       </Routes>
-    </>
+    </div>
   );
 }

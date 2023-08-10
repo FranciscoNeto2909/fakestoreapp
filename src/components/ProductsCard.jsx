@@ -52,10 +52,6 @@ export default function ProductsCard({ prod, i }) {
                     <p className="prod-price">R$:
                         <span className="prod-price--green">{prod.price}</span>
                     </p>
-                    <button className="card-btn" onClick={handleSelect}>Comprar</button>
-                    <button className="card-cart" onClick={handleAddToCart}>
-                        <img src={cartImg} alt="cart" className="card-cart-img" />
-                    </button>
                 </div>
             </div>
         </>
