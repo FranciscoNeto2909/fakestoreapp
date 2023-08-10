@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 
 export default function NavBar() {
     const [dropdownOpened, setDropdownOpened] = useState(false)
-
+    const [menuOpened, setMenuOpened] = useState(false)
     function handleHideDropdown() {
         setDropdownOpened(false)
     }
@@ -36,6 +36,11 @@ export default function NavBar() {
                 <button className="header-search-btn">
                     <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png" alt="" className="header-search-img" />
                 </button>
+            </div>
+            <div className="header-menu" onClick={() => setMenuOpened(!menuOpened)}>
+                <span className={`header-menu-item ${menuOpened && "header-item-line1"}`}></span>
+                <span className={`header-menu-item ${menuOpened && "header-item-hiden"}`}></span>
+                <span className={`header-menu-item ${menuOpened && "header-item-line2"}`}></span>
             </div>
             <div className="header-anuncio">
                 <p className="header-anuncio-text-first">Faça login e obtena um cupom de</p>

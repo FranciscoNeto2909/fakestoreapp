@@ -36,7 +36,8 @@
 
 .header-search {
     height: 40px;
-    width: 444px;
+    min-width: 250px;
+    max-width: 444px;
     display: flex;
     background-color: #fff;
     overflow: hidden;
@@ -91,6 +92,10 @@
     opacity: 0.6;
 }
 
+.header-menu {
+    display: none;
+}
+
 .header-anuncio {
     justify-self: flex-end;
     width: 180px;
@@ -130,6 +135,7 @@
     padding: 4px;
     border: 1px solid #266BAF;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .header-cep:hover {
@@ -170,6 +176,7 @@
 .header-categories-item {
     color: #fff;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .categorias {
@@ -197,7 +204,7 @@
 .header-dropdown {
     position: absolute;
     background-color: #333;
-    padding:16px 24px;
+    padding: 16px 24px;
     border-radius: 4px;
     color: #fff;
     bottom: -140px;
@@ -215,7 +222,7 @@
     width: 20px;
 }
 
-.header-dropdown-item{
+.header-dropdown-item {
     text-align: start;
     cursor: pointer;
 }
@@ -228,15 +235,88 @@
     gap: 8px;
 }
 
-.header-nav-item{
+.header-nav-item {
     color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-.header-nav-cart{
+.header-nav-cart {
     display: flex;
     align-items: center;
     border: none;
     background-color: transparent;
     color: #fff;
     cursor: pointer;
+}
+
+@media (max-width: 810px) {
+    .header {
+        padding: 8px 0;
+        height: 80px;
+        gap: 4px 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .header-anuncio,
+    .header-categories,
+    .header-nav,
+    .header-logo-text {
+        display: none;
+    }
+
+    .header-logo {
+        height: 40px;
+        width: auto;
+    }
+
+    .header-menu {
+        justify-self: center;
+        height: 25px;
+        width: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .header-menu-item {
+        color: #fff;
+        border: 1px solid;
+        transition: all 100ms ease-in-out;
+    }
+
+    .header-item-line1 {
+        transform: rotate(45deg) translateY(4px);
+    }
+
+    .header-item-line2 {
+        transform: rotate(-45deg) translateY(-4px);
+    }
+
+    .header-item-hiden {
+        display: none;
+    }
+
+    .header-cep {
+        width: auto;
+    }
+
+    .header-cep:hover {
+        border: 1px solid #266BAF;
+    }
+
+    .header-cep-text {
+        font-size: 12px;
+        text-align: start;
+        width: auto;
+        line-height: 16px;
+        color: #fff;
+    }
+
+    .header-cep {
+        grid-column: span 3;
+    }
 }
