@@ -8,6 +8,7 @@ import Menu from "../menu/Menu"
 export default function NavBar() {
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [menuOpened, setMenuOpened] = useState(false)
+
     function handleHideDropdown() {
         setDropdownOpened(false)
     }
@@ -20,11 +21,16 @@ export default function NavBar() {
 
     useEffect(() => {
         window.addEventListener("click", e => {
-            if (!e.target.className.includes("categorias")) {
+            if (!e.target.className.includes("dropdown")) {
                 setDropdownOpened(false)
+            }
+
+            if (!e.target.className.includes("menu")) {
+                setMenuOpened(false)
             }
         })
     }, [])
+
 
     return (
         <header className="header">
@@ -57,7 +63,7 @@ export default function NavBar() {
             </div>
             <div className="header-categories">
                 <ul className="header-categories-list">
-                    <li onClick={handleShowDropdown} className="header-categories-item categorias">Categorias</li>
+                    <li onClick={handleShowDropdown} className="header-categories-item dropdown">Categorias</li>
                     <li className="header-categories-item">Promoções</li>
                     <li className="header-categories-item">Contato</li>
                     <li className="header-categories-item">Sobre</li>
