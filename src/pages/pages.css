@@ -97,6 +97,14 @@
     color: #00c0c0ef;
 }
 
+.promotions-cards{
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 14px;
+}
+
 @media (max-width:500px) {
 
     .home,

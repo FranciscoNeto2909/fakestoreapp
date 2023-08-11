@@ -1,93 +1,3 @@
-.card {
-    height: 270px;
-    width: 200px;
-    margin: 10px 0;
-    padding: 4px;
-    background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.card-img {
-    height: 150px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.card-info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.prod-price {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.prod-price--green {
-    color: #0f0;
-}
-
-.prod-price--off {
-    color: #f00;
-    margin-left: 5px;
-}
-
-.card-cart {
-    height: 30px;
-    background-color: transparent;
-    border: 1px solid #008080;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-.card-cart:hover {
-    cursor: pointer;
-}
-
-.card-cart-img {
-    height: 25px;
-}
-
-.card-btn {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-    font-weight: 600;
-    padding: 2px 5px;
-    padding: 10px;
-    border: 0;
-    color: #fff;
-    background: linear-gradient(to left, #008080, #00c0c0);
-    border-radius: 2px;
-}
-
-.card-btn:hover {
-    cursor: pointer;
-}
-
-.card-btn--close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 10px;
-    border: none;
-    color: #f00;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-.card-btn-closeimg {
-    height: 25px;
-}
-
 .sale-form {
     width: 300px;
     display: flex;
@@ -104,14 +14,6 @@
 
 .cart-img {
     height: 30px;
-}
-
-.card-prices {
-    width: 100%;
-    padding: 5px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .routes-list {

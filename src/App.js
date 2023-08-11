@@ -7,11 +7,16 @@ import NoutFound from './pages/NotFound';
 import About from './pages/About';
 import Message from './components/Message';
 import Cart from "./pages/Cart"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 import './App.css';
 import { useEffect } from 'react';
 import { getProducts } from './services/productsSlice';
 import BuyCard from "./components/BuyCard"
 import PurchasedProducts from './pages/PurchasedProducts';
+import Promotions from './pages/Promotions';
+import Sale from './pages/Sale';
+
 export default function App() {
   const isMsg = useSelector(data => data.app.isMessage)
   const prod = useSelector(data => data.products.productToBuy)
@@ -28,9 +33,13 @@ export default function App() {
       {prod.length > 0 && <BuyCard />}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products/purchased' element={<PurchasedProducts />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/minhas-compras' element={<PurchasedProducts />} />
+        <Route path='/promoções' element={<Promotions />} />
+        <Route path='/carrinho' element={<Cart />} />
+        <Route path='/vendas' element={<Sale />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/sobre' element={<About />} />
         <Route path='/*' element={<NoutFound />} />
       </Routes>
     </div>

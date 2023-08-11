@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux"
-import ProductsCard from "../components/ProductsCard"
+import ProductsCard from "../components/productsCard/ProductsCard"
 import Loader from "../components/Loader"
 import { useEffect, useState } from "react"
-export default function Home(params) {
-    const products = useSelector(data => data.products.products)
-    const [category] = useState("")
+
+export default function Home() {
+    const { products, filter } = useSelector(data => data.products)
     const [filteredProducts, setFilteredProducts] = useState({})
 
     useEffect(() => {
-        if (products.length > 0 && category !== "") {
-            setFilteredProducts(products.filter(prod => prod.category === category))
-        } else if (products.length > 0 && category === "") {
+        if (products.length > 0 && filter !== "") {
+            setFilteredProducts(products.filter(prod => prod.category === filter))
+        } else if (products.length > 0 && filter === "") {
             setFilteredProducts(products)
         }
-    }, [products, category])
+    }, [products, filter])
 
     return (
         <div className="home">

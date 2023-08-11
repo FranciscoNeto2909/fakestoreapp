@@ -18,6 +18,7 @@
     height: 40px;
     overflow: hidden;
     width: 180px;
+    cursor: pointer;
 }
 
 .header-logo-img {
@@ -249,10 +250,13 @@
 }
 
 .header-nav-item {
+    background-color: transparent;
+    border: none;
     color: #fff;
     font-size: 14px;
     white-space: nowrap;
     margin: 0 4px;
+    cursor: pointer;
 }
 
 .header-nav-cart {
