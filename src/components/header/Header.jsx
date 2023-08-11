@@ -5,12 +5,13 @@ import { useEffect, useState } from "react"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import Menu from "../menu/Menu"
 import { useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { setFilter } from "../../services/productsSlice"
 
 export default function NavBar() {
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [menuOpened, setMenuOpened] = useState(false)
+    const filter = useSelector(data => data.products.filter)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -25,7 +26,7 @@ export default function NavBar() {
     function handleShowDropdown() {
         setDropdownOpened(true)
     }
-    
+
 
     useEffect(() => {
         window.addEventListener("click", e => {
@@ -77,11 +78,11 @@ export default function NavBar() {
                     <li className="header-categories-item" onClick={() => navigate("/sobre")}>Sobre</li>
                 </ul>
                 {dropdownOpened && <ul className="header-dropdown" onMouseLeave={handleHideDropdown}>
-                    <li className="header-dropdown-item" onClick={() => handleSetFilter("")}>todos</li>
-                    <li className="header-dropdown-item" onClick={() => handleSetFilter("electronics")}>Eletronic</li>
-                    <li className="header-dropdown-item" onClick={() => handleSetFilter("jewelery")}>Jewelery</li>
-                    <li className="header-dropdown-item" onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
-                    <li className="header-dropdown-item" onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
+                    <li className={`header-dropdown-item ${filter === "" && "categorie-selected"}`} onClick={() => handleSetFilter("")}>todos</li>
+                    <li className={`header-dropdown-item ${filter === "electronics" && "categorie-selected"}`} onClick={() => handleSetFilter("electronics")}>Eletronic</li>
+                    <li className={`header-dropdown-item ${filter === "jewelery" && "categorie-selected"}`} onClick={() => handleSetFilter("jewelery")}>Jewelery</li>
+                    <li className={`header-dropdown-item ${filter === "men's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
+                    <li className={`header-dropdown-item ${filter === "women's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
                 </ul>}
             </div>
             <nav className="header-nav">

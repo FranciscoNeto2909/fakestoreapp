@@ -237,7 +237,7 @@
     padding: 4px 16px;
 }
 
-.header-dropdown-item:hover {
+.header-dropdown-item:not(.categorie-selected):hover {
     background-color: #003f5a;
 }
 

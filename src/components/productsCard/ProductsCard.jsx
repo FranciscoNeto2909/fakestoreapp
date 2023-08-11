@@ -35,18 +35,26 @@ export default function ProductsCard({ prod, i, promotion }) {
         <>
             <div className="card" key={i}>
                 <img src={prod?.image} alt="product" className="card-img" />
-                <h5 className="card-title">{prod?.title}</h5>
-                <div className="card-info">
-                    {promotion ?
-                        <>
-                            <p className="prod-price">R$:
-                                <span className="prod-price--green">{Math.round((75 / 100) * prod?.price) - 1}.99</span>
-                            </p>
-                            <span className="prod-price--off">15% off</span>
-                        </>
-                        : <p className="prod-price">R$:
-                            <span className="prod-price--green">{prod?.price}</span>
-                        </p>}
+                <div>
+                    <div className="card-info">
+                        {promotion ?
+                            <>
+                                <div className="prod-price-prices" >
+                                    <sup className="prod-price--realprice">R$:{prod?.price}</sup>
+                                    <div className="prod-price">
+                                        <span>
+                                            R$:
+                                            {Math.round((75 / 100) * prod?.price) - 1}.99
+                                        </span>
+                                        <span translate="no" className="prod-price--green">15% OFF</span>
+                                    </div>
+                                </div>
+                            </>
+                            : <p className="prod-price">R$:
+                                {prod?.price}
+                            </p>}
+                    </div>
+                    <h5 className="card-title">{prod?.title}</h5>
                 </div>
             </div>
         </>

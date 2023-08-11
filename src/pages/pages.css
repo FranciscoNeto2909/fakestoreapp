@@ -97,12 +97,24 @@
     color: #00c0c0ef;
 }
 
-.promotions-cards{
+.promotions-cards {
     margin-top: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
     gap: 14px;
+}
+
+@media (max-width:700px) {
+    .promotions-cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
 }
 
 @media (max-width:500px) {

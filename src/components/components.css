@@ -218,48 +218,12 @@
 }
 
 @media (max-width : 500px) {
-    .nav-container {
-        top: unset;
-        bottom: -1px;
-        align-items: center;
-        justify-content: baseline;
-    }
-
-    .card {
-        height: 350px;
-        min-width: 290px;
-        padding: 10px;
-    }
-
     .purchased {
         height: 400px;
     }
 
-    .card-title {
-        font-size: 16px;
-    }
-
-    .card-btn {
-        width: 120px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #ddd;
-    }
-
-    .card-img {
-        height: 200px;
-    }
-
-    .card-cart {
-        transform: scale(1.2);
-    }
-
     .purchased-title {
         text-align: start;
-    }
-
-    .prod-price {
-        font-size: 18px;
     }
 
     .cart-button {
