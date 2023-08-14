@@ -189,6 +189,7 @@
     margin-top: 5px;
     height: 50px;
     width: 50px;
+    margin: 24px auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -198,7 +199,7 @@
 .loader-item {
     height: 10px;
     width: 10px;
-    background-color: #fff;
+    background-color: #222;
     border-radius: 5px;
     animation: scale-up 2s infinite;
 }

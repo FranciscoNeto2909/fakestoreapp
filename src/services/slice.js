@@ -4,10 +4,14 @@ const cartSlice = createSlice({
     name: "app",
     initialState: {
         cart: [],
-        purchasedProducts:[],
+        purchasedProducts: [],
         isMessage: false,
         isModalOpened: false,
-        message: ""
+        message: "",
+        cep:{
+            cep:"",
+            location:""
+        }
     },
     reducers: {
         addItem(state, { payload }) {
@@ -30,9 +34,12 @@ const cartSlice = createSlice({
         },
         setMessage(state, { payload }) {
             state.message = payload
+        },
+        setCep(state, {payload}){
+            state.cep = payload
         }
     }
 })
 
-export const { addItem, removeItem, showMessage, hideMessage, setMessage, addPurchasedProduct, removePurchasedProduct } = cartSlice.actions
+export const { addItem, removeItem, showMessage, hideMessage, setMessage, addPurchasedProduct, removePurchasedProduct, setCep } = cartSlice.actions
 export default cartSlice.reducer

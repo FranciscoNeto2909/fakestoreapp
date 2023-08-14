@@ -8,10 +8,11 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setFilter } from "../../services/productsSlice"
 
-export default function NavBar() {
+export default function NavBar({ setInsertingCep, insertingCep }) {
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [menuOpened, setMenuOpened] = useState(false)
     const filter = useSelector(data => data.products.filter)
+    const cep = useSelector(data => data.app.cep)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -62,14 +63,18 @@ export default function NavBar() {
                 menuOpened && <Menu setMenuOpened={setMenuOpened} />
             }
             <div className="header-anuncio">
-                <p className="header-anuncio-text-first">Faça login e obtena um cupom de</p>
-                <img className="header-anuncio-img" src="https://2.bp.blogspot.com/-i7KcLBYZ9Cw/VPOlbAu0L5I/AAAAAAAAEL8/e75x5MF8CLI/s1600/frete5.png" alt="" />
-                <p className="header-anuncio-text">Na primeira compra</p>
+                <img className="header-anuncio-img " src="https://cdn-icons-png.flaticon.com/512/6713/6713658.png" alt="" />
+                <p className="header-anuncio-text">Frete gratis na primeira compra!</p>
             </div>
-            <div className="header-cep">
-                <img className="header-cep-img" src="https://cdn-icons-png.flaticon.com/512/106/106121.png" alt="" />
-                <p className="header-cep-text">Informe seu <span className="header-cep-span">Cep</span></p>
-            </div>
+            {cep.location ?
+                <div className="header-cep">
+                    <p className="header-cep-text">{cep.cep} {cep.location}</p>
+                </div> :
+
+                < div className="header-cep" onClick={() => setInsertingCep(!insertingCep)}>
+                    <img className="header-cep-img" src="https://cdn-icons-png.flaticon.com/512/106/106121.png" alt="" />
+                    <p className="header-cep-text">Informe seu <span className="header-cep-span">Cep</span></p>
+                </div>}
             <div className="header-categories">
                 <ul className="header-categories-list">
                     <li onClick={handleShowDropdown} className="header-categories-item categorias">Categorias</li>
@@ -93,6 +98,6 @@ export default function NavBar() {
                     <AiOutlineShoppingCart size={16} style={{ pointerEvents: "none" }} />
                 </button>
             </nav>
-        </header>
+        </header >
     )
 }

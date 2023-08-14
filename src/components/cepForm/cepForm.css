@@ -1,0 +1,97 @@
+.cepForm {
+    position: fixed;
+    top: 35%;
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.cepForm-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cepForm-closebtn {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    font-size: 22px;
+    opacity: .9;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cepForm-form {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.cepForm-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.cepForm-lbl {
+    font-size: 12px;
+    color: #aaa;
+}
+
+
+.cepForm-inpt {
+    font-size: 16px;
+    width: 9ch;
+    text-align: start;
+    border: none;
+    border-bottom: 2px solid #266baf;
+    outline: none;
+}
+
+.cepForm-location {
+    font-size: 16px;
+    border-bottom: 2px solid #266baf;
+}
+
+.cepForm-btn {
+    height: 30px;
+    color: #fff;
+    background-color: #266baf;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .cepForm-form {
+        gap: 16px;
+    }
+
+    .cepForm {
+        top: unset;
+        bottom: 0;
+        height: 200px;
+        width: 100%;
+        border-radius: 25px 25px 0 0;
+        font-size: 1.3em;
+    }
+
+    .cepForm-closebtn {
+        top: 8px;
+        right: 16px;
+    }
+}

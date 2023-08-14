@@ -31,6 +31,7 @@ export default function ProductsCard({ prod, i, promotion }) {
     //     }
     // }
 
+
     return (
         <>
             <div className="card" key={i}>
