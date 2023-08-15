@@ -65,6 +65,12 @@
     color: #f00;
 }
 
+.prod-price-priceAndInstallment{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .card-prices {
     width: 100%;
     padding: 5px 0;
@@ -73,19 +79,48 @@
     align-items: flex-start;
 }
 
+.prod-installment{
+    font-size: 13px;
+}
+
+.prod-price-freight{
+    color: #00A650;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 @media (max-width: 500px) {
     .card {
-        height: 350px;
-        min-width: 290px;
+        height: 150px;
+        width: 100%;
+        margin: 0;
         padding: 10px;
+        flex-direction: row;
+        gap: 12px;
+        border: 0;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom:1px solid #ddd;
+    }
+
+    .card-img{
+        height: 100px;
+        width: 100px;
     }
 
     .card:hover {
         box-shadow: unset;
     }
 
+    .card-texts{
+        width: 70%;
+        display: flex;
+        flex-direction:column-reverse;
+    }
+
     .card-title {
-        font-size: 18px;
+        height: 4ch;
+        font-size: 14px;
     }
 
     .card-btn {
@@ -95,11 +130,7 @@
         color: #ddd;
     }
 
-    .card-img {
-        height: 200px;
-    }
-
     .prod-price {
-        font-size: 18px;
+        font-size: 14px;
     }
 }

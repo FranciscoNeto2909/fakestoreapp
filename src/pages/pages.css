@@ -122,7 +122,6 @@
     .home,
     .about,
     .cart-container {
-        margin-top: 15px;
         padding: 0 16px;
     }
 
@@ -132,8 +131,7 @@
 
     .container-prod {
         margin-top: unset;
-        gap: 10px;
-        margin-bottom: 50px;
+        gap: 0px;
     }
 
     .select-container {

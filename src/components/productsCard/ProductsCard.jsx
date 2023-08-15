@@ -36,7 +36,7 @@ export default function ProductsCard({ prod, i, promotion }) {
         <>
             <div className="card" key={i}>
                 <img src={prod?.image} alt="product" className="card-img" />
-                <div>
+                <div className="card-texts">
                     <div className="card-info">
                         {promotion ?
                             <>
@@ -51,9 +51,15 @@ export default function ProductsCard({ prod, i, promotion }) {
                                     </div>
                                 </div>
                             </>
-                            : <p className="prod-price">R$:
-                                {prod?.price}
-                            </p>}
+                            :
+                            <div className="prod-price-priceAndInstallment">
+                                <p className="prod-price">R$:
+                                    {prod?.price}
+                                </p>
+                                <p className="prod-installment">em <span className="prod-price--green">10x R$ {(prod?.price/10).toFixed(2)} sem juros</span></p>
+                                <p className="prod-price-freight">Frete gratis</p>
+                            </div>
+                        }
                     </div>
                     <h5 className="card-title">{prod?.title}</h5>
                 </div>
