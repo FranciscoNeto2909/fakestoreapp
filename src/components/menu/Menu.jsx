@@ -5,17 +5,17 @@ import { CiDiscount1 } from "react-icons/ci"
 import { BiPurchaseTag } from "react-icons/bi"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { setFilter } from "../../services/productsSlice"
+import { setFilteredCat } from "../../services/productsSlice"
 
 export default function Menu({ setMenuOpened }) {
     const [categoriesOpened, setCategoriesOpened] = useState(false)
-    const filter = useSelector(data => data.products.filter)
+    const filteredCat = useSelector(data => data.products.filteredCat)
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     function handleSetFilter(filter) {
-        dispatch(setFilter(filter))
+        dispatch(setFilteredCat(filter))
         setMenuOpened(false)
     }
     function handleDropdown(e) {
@@ -54,15 +54,15 @@ export default function Menu({ setMenuOpened }) {
                 </li>
                 {categoriesOpened &&
                     <>
-                        <li className={`menu-item-categorie ${filter === "" && "categorie-selected"}`} onClick={() => handleSetFilter("")}>Todos</li>
+                        <li className={`menu-item-categorie ${filteredCat === "" && "categorie-selected"}`} onClick={() => handleSetFilter("")}>Todos</li>
 
-                        <li className={`menu-item-categorie ${filter === "electronics" && "categorie-selected"}`} onClick={() => handleSetFilter("electronics")}>Eletronics</li>
+                        <li className={`menu-item-categorie ${filteredCat === "electronics" && "categorie-selected"}`} onClick={() => handleSetFilter("electronics")}>Eletronics</li>
 
-                        <li className={`menu-item-categorie ${filter === "jewelery" && "categorie-selected"}`} onClick={() => handleSetFilter("jewelery")}>Jewelery</li
+                        <li className={`menu-item-categorie ${filteredCat === "jewelery" && "categorie-selected"}`} onClick={() => handleSetFilter("jewelery")}>Jewelery</li
                         >
-                        <li className={`menu-item-categorie ${filter === "men's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
+                        <li className={`menu-item-categorie ${filteredCat === "men's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
 
-                        <li className={`menu-item-categorie ${filter === "women's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
+                        <li className={`menu-item-categorie ${filteredCat === "women's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
                     </>
                 }
                 <li className="menu-item" onClick={() => handleNavigate("/vendas")}>

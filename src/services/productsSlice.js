@@ -11,7 +11,8 @@ const productsSlice = createSlice({
     initialState: {
         products: {},
         productToBuy: [],
-        filter: ""
+        filteredCat: "",
+        searchedProd: ""
     },
     reducers: {
         setProductToBuy: (state, { payload }) => {
@@ -20,8 +21,11 @@ const productsSlice = createSlice({
         removeProductToBuy: (state) => {
             return { ...state, productToBuy: {} }
         },
-        setFilter: (state, { payload }) => {
-            return { ...state, filter: payload }
+        setFilteredCat: (state, { payload }) => {
+            return { ...state, filteredCat: payload }
+        },
+        setSearchedProd: (state, { payload }) => {
+            return { ...state, searchedProd: payload }
         }
     },
     extraReducers: bulider => {
@@ -31,5 +35,5 @@ const productsSlice = createSlice({
             })
     },
 })
-export const { setProductToBuy, removeProductToBuy, setFilter } = productsSlice.actions
+export const { setProductToBuy, removeProductToBuy, setFilteredCat, setSearchedProd } = productsSlice.actions
 export default productsSlice.reducer

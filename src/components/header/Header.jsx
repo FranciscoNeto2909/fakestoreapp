@@ -1,23 +1,23 @@
 import "./header.css"
 import logo from "../../images/logo.png"
 import { useEffect, useState } from "react"
-
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import Menu from "../menu/Menu"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { setFilter } from "../../services/productsSlice"
+import { setFilteredCat, setSearchedProd } from "../../services/productsSlice"
 
 export default function NavBar({ setInsertingCep, insertingCep }) {
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [menuOpened, setMenuOpened] = useState(false)
-    const filter = useSelector(data => data.products.filter)
+    const [searchProd, setSearchProd] = useState("")
+    const filteredCat = useSelector(data => data.products.filteredCat)
     const cep = useSelector(data => data.app.cep)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     function handleSetFilter(filter) {
-        dispatch(setFilter(filter))
+        dispatch(setFilteredCat(filter))
     }
 
     function handleHideDropdown() {
@@ -26,6 +26,15 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
 
     function handleShowDropdown() {
         setDropdownOpened(true)
+    }
+
+    function handleSearchProd() {
+        dispatch(setSearchedProd(searchProd))
+        console.log(searchProd)
+    }
+
+    function handleChangeSearchProd(prod) {
+        setSearchProd(prod)
     }
 
 
@@ -49,8 +58,8 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
                 <span className="header-logo-text">FakestoreApp</span>
             </div>
             <div className="header-search">
-                <input className="header-search-input" type="text" placeholder="Buscar produtos, marcas e muito mais..." />
-                <button className="header-search-btn">
+                <input className="header-search-input" type="text" placeholder="Buscar produtos, marcas e muito mais..." onChange={e => handleChangeSearchProd(e.target.value)} />
+                <button className="header-search-btn" onClick={handleSearchProd}>
                     <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png" alt="" className="header-search-img" />
                 </button>
             </div>
@@ -83,11 +92,11 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
                     <li className="header-categories-item" onClick={() => navigate("/sobre")}>Sobre</li>
                 </ul>
                 {dropdownOpened && <ul className="header-dropdown" onMouseLeave={handleHideDropdown}>
-                    <li className={`header-dropdown-item ${filter === "" && "categorie-selected"}`} onClick={() => handleSetFilter("")}>todos</li>
-                    <li className={`header-dropdown-item ${filter === "electronics" && "categorie-selected"}`} onClick={() => handleSetFilter("electronics")}>Eletronic</li>
-                    <li className={`header-dropdown-item ${filter === "jewelery" && "categorie-selected"}`} onClick={() => handleSetFilter("jewelery")}>Jewelery</li>
-                    <li className={`header-dropdown-item ${filter === "men's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
-                    <li className={`header-dropdown-item ${filter === "women's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
+                    <li className={`header-dropdown-item ${filteredCat === "" && "categorie-selected"}`} onClick={() => handleSetFilter("")}>todos</li>
+                    <li className={`header-dropdown-item ${filteredCat === "electronics" && "categorie-selected"}`} onClick={() => handleSetFilter("electronics")}>Eletronic</li>
+                    <li className={`header-dropdown-item ${filteredCat === "jewelery" && "categorie-selected"}`} onClick={() => handleSetFilter("jewelery")}>Jewelery</li>
+                    <li className={`header-dropdown-item ${filteredCat === "men's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("men's clothing")}>Men's clothing</li>
+                    <li className={`header-dropdown-item ${filteredCat === "women's clothing" && "categorie-selected"}`} onClick={() => handleSetFilter("women's clothing")}>Women's clothing</li>
                 </ul>}
             </div>
             <nav className="header-nav">

@@ -80,6 +80,7 @@
     border: none;
     background-color: transparent;
     content: "";
+    cursor: pointer;
 }
 
 .header-search-btn::before {
