@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux"
-import ProductsCard from "../components/productsCard/ProductsCard"
-import Loader from "../components/Loader"
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import ProductsCard from "../../components/productsCard/ProductsCard"
+import Loader from "../../components/Loader"
+import "./home.css"
 
 export default function Home() {
     const { products, filteredCat, searchedProd } = useSelector(data => data.products)
@@ -22,7 +23,7 @@ export default function Home() {
                 const lowercaseProd = prod.title.toLowerCase()
                 if (lowercaseProd.includes(searchedProd)) {
                     return prod
-                }else{
+                } else {
                     return false
                 }
             }))
@@ -34,6 +35,23 @@ export default function Home() {
 
     return (
         <div className="home">
+            <div className="home-anuncio">
+                <div className="home-anuncio-texts">
+                    <p className="home-anuncio-text">Monitores AMD, full hd 144hz e muito mais!<span className="home-anuncio-textStrong">Monte hoje seu setup gamer</span></p>
+                    <div className="home-anuncio-installment">
+                        <span className="home-installment-one">ATÉ</span>
+                        <span className="home-installment-middle">12X</span>
+                        <span className="home-installment-twho">SEM JUROS</span>
+                    </div>
+                    <div className="home-anuncio-freight">
+                        <span className="home-freight-one">FRETE GRATIS</span> <span className="home-freight-twho">A PARTIR DE R$ 99</span>
+                    </div>
+                </div>
+                <img className="home-anuncio-img" src="https://www.gamemax-br.com/img/produtos/1542873654(4).png" alt="" />
+            </div>
+            <div>
+                
+            </div>
             {filteredProducts.length === undefined &&
                 <div className="loader-container">
                     <Loader />

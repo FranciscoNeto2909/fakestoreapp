@@ -1,16 +1,9 @@
 .products,
-.home,
-.about,
-
-.home {
+.about {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-}
-
-.home-resume {
-    margin: 10px 0;
-    font-size: .9rem;
+    margin-top: 0;
 }
 
 .select-container {
@@ -20,24 +13,6 @@
     background: transparent;
     z-index: 1;
     padding-bottom: 5px;
-}
-
-.loader-container {
-    width: 100%;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-}
-
-.container-prod {
-    width: 100%;
-    margin-top: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
 }
 
 .page-container {
@@ -103,7 +78,6 @@
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-
     gap: 14px;
 }
 
@@ -125,58 +99,58 @@
         padding: 0 16px;
     }
 
-    .home{
+    .home {
         padding: 0;
     }
 
-.products {
-    margin-top: 35px;
-}
-
-.container-prod {
-    margin-top: unset;
-    gap: 0px;
-}
-
-.select-container {
-    top: -1px;
-    right: unset;
-    width: 100%;
-    padding-top: 10px;
-}
-
-.hidden {
-    height: 99vh;
-}
-
-.home-emphasis {
-    margin: 50px 0 10px 0;
-}
-
-.carroussel {
-    justify-content: flex-start;
-    animation: move 9s ease-in-out infinite 2s;
-}
-
-@keyframes move {
-    0% {
-        transform: translateX(0px);
+    .products {
+        margin-top: 35px;
     }
 
-    20% {
-        transform: translateX(0px);
+    .container-prod {
+        margin-top: unset;
+        gap: 0px;
     }
 
-    50% {
-        transform: translateX(-820px);
+    .select-container {
+        top: -1px;
+        right: unset;
+        width: 100%;
+        padding-top: 10px;
     }
 
-    60% {
-        transform: translateX(-820px);
+    .hidden {
+        height: 99vh;
     }
 
-    100% {
-        transform: translateX(0px);
+    .home-emphasis {
+        margin: 50px 0 10px 0;
     }
-}
+
+    .carroussel {
+        justify-content: flex-start;
+        animation: move 9s ease-in-out infinite 2s;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0px);
+        }
+
+        20% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(-820px);
+        }
+
+        60% {
+            transform: translateX(-820px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
 }

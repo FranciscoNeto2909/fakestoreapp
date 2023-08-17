@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Home from "./pages/Home"
+import Home from "./pages/home/Home"
 import Header from './components/header/Header';
 import NoutFound from './pages/NotFound';
 import About from './pages/About';

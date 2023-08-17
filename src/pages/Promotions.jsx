@@ -6,7 +6,7 @@ import Loader from "../components/Loader"
 
 export default function Promotions() {
     const [randomNums, setRandomNums] = useState([])
-    const { products, filter } = useSelector(data => data.products)
+    const { products, filteredCat } = useSelector(data => data.products)
     const [loading, setLoading] = useState(false)
 
     function handleGenerateRandomNums() {
@@ -41,8 +41,8 @@ export default function Promotions() {
                 <div className="promotions-cards">
                     {randomNums.length > 0 &&
                         randomNums.map((num, i) => {
-                            const filteredProd = products[num]?.category === filter
-                            if (filter === "") {
+                            const filteredProd = products[num]?.category === filteredCat
+                            if (filteredCat === "") {
                                 return <ProductsCard promotion={true} prod={products[num]} i={i} />
                             } else if (filteredProd) {
                                 return <ProductsCard promotion={true} prod={products[num]} i={i} />

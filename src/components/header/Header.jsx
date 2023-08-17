@@ -16,6 +16,12 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    function handleNavigateToHome() {
+        dispatch(setSearchedProd(""))
+        dispatch(setFilteredCat(""))
+        navigate('/')
+    }
+
     function handleSetFilter(filter) {
         dispatch(setFilteredCat(filter))
     }
@@ -53,7 +59,7 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
 
     return (
         <header className="header">
-            <div className="header-logo" onClick={() => navigate('/')}>
+            <div className="header-logo" onClick={handleNavigateToHome}>
                 <img className="header-logo-img" src={logo} alt="logo" />
                 <span className="header-logo-text">FakestoreApp</span>
             </div>
