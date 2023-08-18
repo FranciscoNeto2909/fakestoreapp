@@ -100,6 +100,38 @@
     font-size: 18px;
 }
 
+.home-payments {
+    margin: 20px auto 0;
+    width: 82%;
+    background-color: transparent;
+    display: flex;
+    overflow: hidden;
+}
+
+.home-payment:first-child {
+    border-left: 4px solid #2177F8;
+}
+
+.home-payment {
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    padding: 16px 24px;
+    flex-grow: 1;
+}
+
+.home-payment-title {
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: start;
+}
+
+.home-payment-desc {
+    text-align: start;
+    font-size: 12px;
+    color: #2177F8;
+    cursor: pointer;
+}
+
 .home-resume {
     margin: 10px 0;
     font-size: .9rem;
@@ -115,24 +147,27 @@
 }
 
 .container-prod {
+    margin-top: 12px;
     width: 100%;
-    margin-top: 24px;
+    padding: 0 24px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 14px;
     justify-content: center;
 }
 
 @media (max-width:720px) {
     .home-anuncio {
-        height: 240px;
+        height: 200px;
         padding: 0 16px;
-        gap: 8px;
+        gap: 4px;
     }
 
     .home-anuncio-img {
-        height: 180px;
-        width: 220px;
+        height: 140px;
+        width: 160px;
+        align-self: flex-end;
+        margin-bottom: 16px;
     }
 
     .home-anuncio-texts {
@@ -175,6 +210,58 @@
         font-size: 16px;
         line-height: 14px;
         width: 50px;
+    }
+
+    .home-anuncio-freight {
+        height: 40px;
+    }
+
+    .home-freight-one {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .home-freight-twho {
+        line-height: 14px;
+        font-size: 15px;
+    }
+
+    .home-payments {
+        margin: 16px auto;
+        width: 94%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+
+    .home-payments .home-payment:nth-child(3) {
+        border-left: 4px solid #2177F8;
+    }
+
+    .home-payment {
+        width: 100%;
+        font-size: 12px;
+        padding: 8px;
+        background-color: #fff;
+    }
+
+    .home-payment-title {
+        font-weight: 500;
+        white-space: nowrap;
+        text-align: start;
+    }
+
+    .home-payment-desc {
+        text-align: start;
+        font-size: 10px;
+        color: #2177F8;
+        cursor: pointer;
+    }
+
+    .container-prod {
+        margin-top: 0;
+        padding: 0 12px;
     }
 
 }

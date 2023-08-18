@@ -49,8 +49,21 @@ export default function Home() {
                 </div>
                 <img className="home-anuncio-img" src="https://www.gamemax-br.com/img/produtos/1542873654(4).png" alt="" />
             </div>
-            <div>
-                
+            <div className="home-payments">
+                <div className="home-payment">
+                    <p className="home-payment-title">Pagamento rápido e seguro</p>
+                    <p className="home-payment-desc">SharkBank</p>
+                </div>
+                <div className="home-payment">
+                    <p className="home-payment-title">Até 12 vezes sem juros</p>
+                    <p className="home-payment-desc">Ver mais...</p>
+                </div><div className="home-payment">
+                    <p className="home-payment-title">Desconto no pix</p>
+                    <p className="home-payment-desc">Ver mais...</p>
+                </div><div className="home-payment">
+                    <p className="home-payment-title">Mais formas de pagamento</p>
+                    <p className="home-payment-desc">Ver mais</p>
+                </div>
             </div>
             {filteredProducts.length === undefined &&
                 <div className="loader-container">
