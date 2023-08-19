@@ -9,7 +9,7 @@ export default function Product() {
     const [prod, setProd] = useState({})
     const [sameProducts, setSameProducts] = useState({})
     const products = useSelector(data => data.products.products)
-    const prodId = localStorage.getItem("prodId")
+    const prodId = useSelector(data => data.app.prodId)
     const dispatch = useDispatch()
 
     const defaultImage = "https://mlohrktvfr9b.i.optimole.com/cb:tVDx~16b5e/w:500/h:500/q:mauto/https://www.nerdstickers.com.br/wp-content/uploads/2020/11/adesivo-loading-nerdstickers-preto-1.png"

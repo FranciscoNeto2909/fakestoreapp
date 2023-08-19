@@ -1,11 +1,14 @@
+import { useDispatch } from "react-redux"
 import "./card.css"
 import { useNavigate } from "react-router-dom"
+import { setProdId } from "../../services/slice"
 
 export default function Card({ prod, i, promotion }) {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     async function handleOpenProductPage() {
-        localStorage.setItem("prodId", prod.id)
+        dispatch(setProdId(prod.id))
         navigate("/product")
     }
 

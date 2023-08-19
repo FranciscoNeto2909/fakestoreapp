@@ -12,7 +12,7 @@ const cartSlice = createSlice({
             cep: "",
             location: ""
         },
-        prodId: ""
+        prodId: localStorage.getItem("prodId")
     },
     reducers: {
         addItem(state, { payload }) {
@@ -40,6 +40,7 @@ const cartSlice = createSlice({
             state.cep = payload;
         },
         setProdId(state, { payload }) {
+            localStorage.setItem("prodId", payload);
             state.prodId = payload;
         },
         cleanProdId(state) {
