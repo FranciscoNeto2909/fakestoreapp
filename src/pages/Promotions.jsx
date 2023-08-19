@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import ProductsCard from "../components/productsCard/ProductsCard"
+import Card from "../components/card/Card"
 import Loader from "../components/Loader"
 
 export default function Promotions() {
@@ -43,9 +43,9 @@ export default function Promotions() {
                         randomNums.map((num, i) => {
                             const filteredProd = products[num]?.category === filteredCat
                             if (filteredCat === "") {
-                                return <ProductsCard promotion={true} prod={products[num]} i={i} />
+                                return <Card promotion={true} prod={products[num]} i={i} />
                             } else if (filteredProd) {
-                                return <ProductsCard promotion={true} prod={products[num]} i={i} />
+                                return <Card promotion={true} prod={products[num]} i={i} />
                             } else {
                                 return false
                             }

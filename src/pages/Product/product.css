@@ -1,0 +1,345 @@
+.product {
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 1200px;
+}
+
+.product-header {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-header-item:first-child {
+    color: #0008;
+    position: relative;
+    margin-right: 20px;
+}
+
+.product-header-item:first-child::after {
+    background-color: rgba(0, 0, 0, .2);
+    content: "";
+    height: 12px;
+    position: absolute;
+    right: -10px;
+    top: 6px;
+    width: 1px;
+}
+
+.product-header-item {
+    margin-right: 4px;
+    font-size: 14px;
+    color: #3483FA;
+}
+
+.product-main {
+    background-color: #fff;
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px #0002;
+}
+
+.product-left {
+    width: 480px;
+    align-self: center;
+}
+
+.product-img {
+    height: 350px;
+    width: 350px;
+}
+
+.product-middle {
+    width: 341px;
+    color: #000000ec;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-title {
+    font-size: 22px;
+    text-align: start;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 12px;
+}
+
+.product-rating-count {
+    color: #3483FA;
+    margin-bottom: 6px;
+}
+
+.product-discount {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #0008;
+    text-align: start;
+}
+
+.product-price {
+    text-align: start;
+    font-size: 26px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-price-off {
+    font-size: 16px;
+    font-weight: 500;
+    color: #00A650;
+    margin: 5px 0 0 4px;
+}
+
+.product-installment {
+    text-align: start;
+}
+
+.product-installment-value {
+    color: #00A650;
+    font-weight: 500;
+}
+
+.product-paymentMethods {
+    display: block;
+    margin: 8px 0;
+    color: #3483FA;
+    text-align: start;
+}
+
+.product-info-title {
+    font-size: 14px;
+    margin: 8px 0 12px 0;
+    text-align: start;
+}
+
+.product-info-desc {
+    font-size: 14px;
+    width: 300px;
+    text-align: start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.product-right {
+    width: 309px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.product-freight {
+    font-weight: 500;
+    text-align: start;
+    color: #00A650;
+    margin-bottom: 8px;
+}
+
+.product-text {
+    font-size: 14px;
+    text-align: start;
+}
+
+.product-amount {
+    font-weight: 500;
+}
+
+.product-available,
+.product-buyAmount {
+    color: #0008;
+}
+
+.product-buyAmount {
+    text-align: start;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.product-buy {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0 16px 0;
+}
+
+.product-buy-btnBuy,
+.product-buy-btnAddCart {
+    height: 44px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.product-buy-btnBuy {
+    color: #fff;
+    background-color: #3483FA;
+}
+
+.product-buy-btnAddCart {
+    color: #3483FA;
+    background-color: #4189E626;
+}
+
+.product-bought-devolution,
+.product-bought-garantee,
+.product-bought-garanteeTime {
+    font-size: 14px;
+    text-align: start;
+    margin: 4px 0;
+    color: #0008;
+}
+
+.product-payment {
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 12px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-payment-info {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-payment-title {
+    font-weight: 500;
+    text-align: start;
+    margin-bottom: 8px;
+    color: #000000E6;
+    font-size: 18;
+}
+
+.product-payment-btn {
+    color: #fff;
+    width: 100%;
+    background-color: #00A650;
+    border: none;
+    height: 44px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-payment-maxInstallment {
+    margin: 8px 0;
+    text-align: start;
+    color: #0008;
+}
+
+.product-payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 50%;
+}
+
+.product-payment-item {
+    width: 48.5%;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    background-color: #4189E626;
+    padding: 4px 0 4px 48px;
+    border-radius: 4px;
+    color: #3483FA;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-otherPayments {
+    display: block;
+    font-size: 14px;
+    text-align: start;
+    margin-top: 8px;
+    color: #3483FA;
+}
+
+.product-same {
+    margin: 24px 0;
+    max-width: 100vw;
+}
+
+.product-same-title {
+    text-align: start;
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.product-same-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+@media (max-width:810px) {
+    .product {
+        max-width: 100vw;
+    }
+
+    .product-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .product-img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .product-left{
+        width: 100vw;
+    }
+
+    .product-middle {
+        padding: 16px 8px;
+    }
+
+    .product-right {
+        width: 100%;
+    }
+
+    .product-payment {
+        gap: 12px;
+    }
+
+    .product-payment-info {
+        width: 60%;
+    }
+
+    .product-payment-item {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        padding: 4px 0 4px 16px;
+    }
+
+    .product-same-title {
+        padding-left: 16px;
+        font-size: 18px;
+    }
+
+    .product-same-cards {
+        max-width: 100vw;
+        padding: 0 16px;
+        overflow-x: scroll;
+    }
+
+}

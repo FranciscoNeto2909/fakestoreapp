@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux/";
-import ProductsCard from "../components/productsCard/ProductsCard";
+import ProductsCard from "../components/card/Card";
 import "./pages.css"
 export default function Cart() {
     const cart = useSelector(data => data.app.cart)
@@ -11,7 +11,7 @@ export default function Cart() {
                 {cart.length > 0 ? cart.map((prod, i) => (
                     <ProductsCard prod={prod} key={i} />
                 )) :
-                <p>Seus produtos adicionados ao carrinho aparecerão aqui</p> 
+                    <p>Seus produtos adicionados ao carrinho aparecerão aqui</p>
                 }
             </div>
         </div>

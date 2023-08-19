@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import ProductsCard from "../../components/productsCard/ProductsCard"
+import ProductsCard from "../../components/card/Card"
 import Loader from "../../components/Loader"
 import "./home.css"
 

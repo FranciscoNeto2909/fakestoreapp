@@ -8,38 +8,46 @@ const cartSlice = createSlice({
         isMessage: false,
         isModalOpened: false,
         message: "",
-        cep:{
-            cep:"",
-            location:""
-        }
+        cep: {
+            cep: "",
+            location: ""
+        },
+        prodId: ""
     },
     reducers: {
         addItem(state, { payload }) {
-            state.cart.push(payload)
+            state.cart.push(payload);
         },
         removeItem(state, { payload }) {
-            state.cart = state.cart.filter(prod => prod.id !== payload.id)
+            state.cart = state.cart.filter(prod => prod.id !== payload.id);
         },
         addPurchasedProduct(state, { payload }) {
-            state.purchasedProducts.push(payload)
+            state.purchasedProducts.push(payload);
         },
         removePurchasedProduct(state, { payload }) {
-            state.purchasedProducts = state.purchasedProducts.filter(prod => prod.id !== payload)
+            state.purchasedProducts = state.purchasedProducts.filter(prod => prod.id !== payload);
         },
         showMessage(state) {
-            state.isMessage = true
+            state.isMessage = true;
         },
         hideMessage(state) {
-            state.isMessage = false
+            state.isMessage = false;
         },
         setMessage(state, { payload }) {
-            state.message = payload
+            state.message = payload;
         },
-        setCep(state, {payload}){
-            state.cep = payload
+        setCep(state, { payload }) {
+            state.cep = payload;
+        },
+        setProdId(state, { payload }) {
+            state.prodId = payload;
+        },
+        cleanProdId(state) {
+            state.prodId = "";
         }
     }
 })
 
-export const { addItem, removeItem, showMessage, hideMessage, setMessage, addPurchasedProduct, removePurchasedProduct, setCep } = cartSlice.actions
+export const { addItem, removeItem, showMessage, hideMessage, setMessage, addPurchasedProduct, removePurchasedProduct, setCep, setProdId, cleanProdId } = cartSlice.actions
+
 export default cartSlice.reducer

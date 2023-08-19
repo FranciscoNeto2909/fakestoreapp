@@ -1,40 +1,17 @@
-// import { useState } from "react"
-// import { useDispatch, useSelector } from "react-redux"
-// import { addItem, removeItem, showMessage, hideMessage, setMessage } from "../services/slice"
-// import { setProductToBuy } from "../services/productsSlice"
-import "./productsCard.css"
+import "./card.css"
+import { useNavigate } from "react-router-dom"
 
-export default function ProductsCard({ prod, i, promotion }) {
-    // const dispatch = useDispatch()
-    // const cart = useSelector(data => data.app.cart)
+export default function Card({ prod, i, promotion }) {
+    const navigate = useNavigate()
 
-    // function handleSelect() {
-    //     dispatch(setProductToBuy(prod))
-    // }
-
-    // function handleShowMessage(text) {
-    //     dispatch(showMessage())
-    //     dispatch(setMessage(text))
-    //     setTimeout(() => {
-    //         dispatch(hideMessage())
-    //     }, 3000);
-    // }
-
-    // function handleAddToCart() {
-    //     hadleChangeCartImg()
-    //     if (!cart.includes(prod)) {
-    //         dispatch(addItem(prod))
-    //         handleShowMessage("Produto adicionado ao carrinho")
-    //     } else {
-    //         dispatch(removeItem(prod))
-    //         handleShowMessage("Produto removido do carrinho")
-    //     }
-    // }
-
+    async function handleOpenProductPage() {
+        localStorage.setItem("prodId", prod.id)
+        navigate("/product")
+    }
 
     return (
         <>
-            <div className="card" key={i}>
+            <div className="card" key={i} onClick={handleOpenProductPage}>
                 <img src={prod?.image} alt="product" className="card-img" />
                 <div className="card-texts">
                     <div className="card-info">
@@ -56,7 +33,7 @@ export default function ProductsCard({ prod, i, promotion }) {
                                 <p className="prod-price">R$:
                                     {prod?.price}
                                 </p>
-                                <p className="prod-installment">em <span className="prod-price--green">10x R$ {(prod?.price/10).toFixed(2)} sem juros</span></p>
+                                <p className="prod-installment">em <span className="prod-price--green">10x R$ {(prod?.price / 10).toFixed(2)} sem juros</span></p>
                                 <p className="prod-price-freight">Frete gratis</p>
                             </div>
                         }

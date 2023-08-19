@@ -1,8 +1,14 @@
+.header-container {
+    background-color: #266BAF;
+    width: 100vw;
+}
+
 .header {
     height: 100px;
-    max-width: 100vw;
-    padding: 8px 16px;
-    background-color: #266BAF;
+    width: 100vw;
+    max-width: 1200px;
+    padding: 8px 0;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
