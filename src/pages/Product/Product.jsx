@@ -115,7 +115,7 @@ export default function Product() {
             <section className="product-same">
                 <h3 className="product-same-title">Outros usuários também compraram</h3>
                 <div className="product-same-cards">
-                    {sameProducts.lenght > 0 &&
+                    {sameProducts.length > 0 &&
                         sameProducts.map((product, i) => (
                             <Card prod={product} key={i} />
                         ))
