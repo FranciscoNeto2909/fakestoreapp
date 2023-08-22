@@ -287,6 +287,17 @@
         align-items: center;
     }
 
+    .header-logo{
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .header-logo-img{
+        padding: 0;
+        margin: -8px;
+    }
+
     .header-anuncio,
     .header-categories,
     .header-nav,
@@ -335,7 +346,7 @@
     }
 
     .header-cep {
-        padding-left: 14px;
+        padding-left: 8px;
         width: auto;
     }
 

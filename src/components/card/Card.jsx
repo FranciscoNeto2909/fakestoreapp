@@ -14,7 +14,7 @@ export default function Card({ prod, i, promotion }) {
 
     return (
         <>
-            <div className="card" key={i} onClick={handleOpenProductPage}>
+            <div className="card" key={prod.id} onClick={handleOpenProductPage}>
                 <img src={prod?.image} alt="product" className="card-img" />
                 <div className="card-texts">
                     <div className="card-info">

@@ -73,7 +73,6 @@
 }
 
 .promotions-cards {
-    margin-top: 16px;
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -92,15 +91,9 @@
 }
 
 @media (max-width:500px) {
-
-    .home,
     .about,
     .cart-container {
         padding: 0 16px;
-    }
-
-    .home {
-        padding: 0;
     }
 
     .products {
@@ -130,6 +123,10 @@
     .carroussel {
         justify-content: flex-start;
         animation: move 9s ease-in-out infinite 2s;
+    }
+
+    .promotions-cards{
+        gap: 0;
     }
 
     @keyframes move {

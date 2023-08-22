@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+const initialProdId = localStorage.getItem("prodId")
 
 const cartSlice = createSlice({
     name: "app",
@@ -12,7 +13,7 @@ const cartSlice = createSlice({
             cep: "",
             location: ""
         },
-        prodId: localStorage.getItem("prodId")
+        prodId: initialProdId
     },
     reducers: {
         addItem(state, { payload }) {

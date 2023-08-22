@@ -37,6 +37,17 @@ export default function Promotions() {
 
     return (
         <div>
+            <div className="product-header">
+                <div className="product-header-items">
+                    <a className="product-header-item" href="/">Voltar</a>
+                </div>
+                <div className="product-header-items">
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                    <a className="product-header-item" href="#">Compartilhar</a>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                    <a className="product-header-item" href="#">vender</a>
+                </div>
+            </div>
             {loading ?
                 <div className="promotions-cards">
                     {randomNums.length > 0 &&
