@@ -210,6 +210,7 @@
 
     .home-installment-twho {
         font-size: 16px;
+        white-space: pre-wrap;
         line-height: 14px;
         width: 50px;
     }
