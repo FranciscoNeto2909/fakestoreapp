@@ -17,7 +17,7 @@ export default function CepForm({ setInsertingCep }) {
 
     async function handleGetCep() {
         if (newCep.length === 8) {
-            const res = await fetch(`http://viacep.com.br/ws/${newCep}/json/`)
+            const res = await fetch(`https://viacep.com.br/ws/${newCep}/json/`)
             const data = await res.json()
             setLocation(data.localidade)
         }
