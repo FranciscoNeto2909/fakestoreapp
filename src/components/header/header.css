@@ -47,7 +47,6 @@
 .header-search {
     height: 40px;
     width: 100%;
-    min-width: 230px;
     display: flex;
     background-color: #fff;
     overflow: hidden;
@@ -287,13 +286,13 @@
         align-items: center;
     }
 
-    .header-logo{
+    .header-logo {
         padding: 0;
         margin: 0;
 
     }
 
-    .header-logo-img{
+    .header-logo-img {
         padding: 0;
         margin: -8px;
     }
@@ -365,6 +364,31 @@
     .header-cep {
         grid-column: span 3;
     }
+}
+
+@media (max-width:320px) {
+    .header {
+        grid-template-columns: 55px 1fr 50px;
+    }
+
+    .header-search {
+        height: 35px;
+        width: 100%;
+        display: flex;
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+        padding-left: 12px;
+        border-radius: 4px;
+        border: 1px solid #fff;
+    }
+
+    .header-search-input {
+        height: 35px;
+        font-size: 14px;
+      }
+
+
 }
 
 @keyframes line1 {

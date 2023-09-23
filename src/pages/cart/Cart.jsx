@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux/";
-import ProductsCard from "../components/card/Card";
-import "./pages.css"
+import ProductsCard from "../../components/card/Card";
+import "../pages.css"
 export default function Cart() {
     const cart = useSelector(data => data.app.cart)
     return (

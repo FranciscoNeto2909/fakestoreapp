@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { hideMessage, removePurchasedProduct, setMessage, showMessage } from "../services/slice";
+import { hideMessage, removePurchasedProduct, setMessage, showMessage } from "../../services/slice";
 
 export default function PurchasedProducts() {
 

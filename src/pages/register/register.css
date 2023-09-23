@@ -1,0 +1,139 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.register-container {
+    min-width: 320px;
+    width: 500px;
+    background-color: #FFF;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #0003;
+}
+
+.register-container h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 18px 0;
+    gap: 6px;
+    position: relative;
+}
+
+.register-label {
+    align-self: flex-start;
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #000e;
+}
+
+.register-input {
+    padding: 10px 0 10px 12px;
+    text-align: start;
+    border: 1px solid #b6d2f1;
+    background-color: #b6d2f1;
+    border-radius: 2px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.register-input[type="email"] {
+    text-transform: none;
+}
+
+.register-input[type="email"]::placeholder {
+    text-transform: capitalize;
+}
+
+.checkbox-input {
+    margin: 4px 0 20px 0;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.register-terms {
+    font-size: 14px;
+}
+
+.register-btn {
+    padding: 12px 4px;
+    color: #fff;
+    background-color: #036eb5;
+    border-radius: 2px;
+    font-weight: bold;
+    border: none;
+    font-size: 16px;
+}
+
+.register-btnDisabled {
+    background-color: #036eb580;
+}
+
+.register-hasAccount {
+    display: flex;
+    justify-content: space-between;
+    color: #000d;
+    font-size: 15px;
+}
+
+.register-hasAccount-focus {
+    color: #00f;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.label-error,
+.register-terms-error {
+    color: #f00;
+}
+
+.input-error {
+    border-color: #f00;
+}
+
+.register-error {
+    align-self: flex-start;
+    color: #f00;
+    font-size: 12px;
+    position: absolute;
+    bottom: -16px;
+}
+
+.register-hasAccount {
+    position: relative;
+    margin: 10px 0;
+}
+
+.register-hasAccount-text {
+    color: #55f;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width:500px) {
+    .register-container {
+        width: 90%;
+        padding: 18px 12px;
+    }
+}
+
+@media (max-width:375px) {
+    .register-hasAccount-text {
+        font-size: 12px;
+    }
+}

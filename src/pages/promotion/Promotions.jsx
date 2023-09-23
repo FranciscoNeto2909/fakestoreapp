@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import Card from "../components/card/Card"
-import Loader from "../components/Loader"
+import Card from "../../components/card/Card"
+import Loader from "../../components/Loader"
 
 export default function Promotions() {
     const [randomNums, setRandomNums] = useState([])

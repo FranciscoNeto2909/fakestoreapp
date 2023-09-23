@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from './services/productsSlice';
 import Home from "./pages/home/Home"
 import NoutFound from './pages/NotFound';
-import About from './pages/About';
-import Cart from "./pages/Cart"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import PurchasedProducts from './pages/PurchasedProducts';
-import Promotions from './pages/Promotions';
-import Sale from './pages/Sale';
+import About from './pages/about/About';
+import Cart from "./pages/cart/Cart"
+import Login from "./pages/login/Login"
+import Register from "./pages/register/Register"
+import PurchasedProducts from './pages/purchase/PurchasedProducts';
+import Promotions from "./pages/promotion/Promotions"
+import Sale from "./pages/sale/Sale"
 import Product from './pages/Product/Product';
 import Header from './components/header/Header';
 import Message from './components/Message';
