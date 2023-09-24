@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { createUser } from "../../services/userSlice"
 import Input from "../../components/input/Input"
 import "./register.css"
 
@@ -9,6 +10,7 @@ export default function Register() {
     const emailRegex = new RegExp("^[_a-z0-9-]+([_a-z0-9-]+)*@[a-z0-9-]+([a-z0-9-]+).([a-z]{2,3})$")
     const passwordRegex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$")
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const user = useSelector(data => data.user.user)
     const [aceptTerms, setAceptTerms] = useState(false)
@@ -100,9 +102,11 @@ export default function Register() {
         }
         else {
             localStorage.setItem("user", JSON.stringify({ ...registerData, isLogged: true }));
+            dispatch(createUser({ ...registerData, isLogged: true }))
             navigate("/")
         }
     }
+
 
     return (
         <div className="register">
