@@ -22,6 +22,8 @@
     align-items: center;
     gap: 12px;
     cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 .menu-item-categories {
@@ -39,8 +41,8 @@
     width: 3px;
     color: rgba(255, 255, 255, .8);
     margin: 0;
-    bottom: 22px;
-    left: 130px;
+    bottom: 24px;
+    left: 144px;
     position: absolute;
     padding: 2px;
 }

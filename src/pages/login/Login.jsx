@@ -3,7 +3,7 @@ import Input from "../../components/input/Input"
 import { login } from "../../services/userSlice"
 import { useDispatch, useSelector } from "react-redux"
 import "./login.css"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Login() {
     const dispatch = useDispatch()
@@ -69,7 +69,7 @@ export default function Login() {
                 </form>
                 <div className="register-hasAccount">
                     <p>Not have an account?</p>
-                    <a href="/register">create here</a>
+                    <Link to="/register">create here</Link>
                 </div>
             </div>
         </div>

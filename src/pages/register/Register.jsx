@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Input from "../../components/input/Input"
 import "./register.css"
@@ -130,7 +130,9 @@ export default function Register() {
                 </form>
                 <div className="register-hasAccount">
                     <p >Alredy have an account?</p>
-                    <a className={errors.accountExist && "register-hasAccount-focus"} href="/login">Log in here</a>
+                    <Link className={`${errors.accountExist && "register-hasAccount-focus"}`} to="/login">
+                        Log in here
+                    </Link>
                 </div>
             </div>
         </div>

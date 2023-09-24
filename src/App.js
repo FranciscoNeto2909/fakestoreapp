@@ -16,6 +16,7 @@ import Header from './components/header/Header';
 import Message from './components/Message';
 import CepForm from './components/cepForm/CepForm';
 import './App.css';
+import Profile from './components/profile/Profile';
 
 export default function App() {
   const isMsg = useSelector(data => data.app.isMessage)
@@ -36,6 +37,7 @@ export default function App() {
         <Route path='/*' element={<NoutFound />} />
         <Route path='/sobre' element={<About />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='/vendas' element={<Sale />} />
         <Route path='/product' element={<Product />} />
         <Route path='/register' element={<Register />} />

@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import "./menu.css"
-import { AiOutlineHome, AiOutlineUnorderedList, AiOutlineQuestionCircle } from "react-icons/ai"
+import { AiOutlineHome, AiOutlineUnorderedList, AiOutlineQuestionCircle, AiOutlineUserAdd, AiOutlineUser, AiOutlineLogin, AiOutlineLogout } from "react-icons/ai"
 import { CiDiscount1 } from "react-icons/ci"
 import { BiPurchaseTag } from "react-icons/bi"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setFilteredCat } from "../../services/productsSlice"
+import { logout } from "../../services/userSlice"
 
 export default function Menu({ setMenuOpened }) {
     const [categoriesOpened, setCategoriesOpened] = useState(false)
     const filteredCat = useSelector(data => data.products.filteredCat)
+    const user = useSelector(data => data.user.user)
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -25,8 +27,14 @@ export default function Menu({ setMenuOpened }) {
     }
 
     function handleNavigate(route) {
-        setMenuOpened(false)
         navigate(route)
+        setMenuOpened(false)
+    }
+
+    function handleLogout() {
+        dispatch(logout())
+        navigate("/")
+        setMenuOpened(false)
     }
 
     useEffect(() => {
@@ -69,10 +77,32 @@ export default function Menu({ setMenuOpened }) {
                     <BiPurchaseTag size={20} />
                     vender
                 </li>
+                {user.isLogged ?
+                    <li className="menu-item" onClick={() => handleNavigate("/profile")}>
+                        <AiOutlineUser size={20} />
+                        Perfil
+                    </li> :
+                    <>
+                        <li className="menu-item" onClick={() => handleNavigate("/register")}>
+                            <AiOutlineUserAdd size={20} />
+                            Criar Conta
+                        </li>
+                        <li className="menu-item" onClick={() => handleNavigate("/login")}>
+                            <AiOutlineLogin size={20} />
+                            Entrar
+                        </li>
+                    </>
+                }
                 <li className="menu-item" onClick={() => handleNavigate("/sobre")}>
                     <AiOutlineQuestionCircle size={20} />
                     Sobre
                 </li>
+                {
+                    user.isLogged && <li className="menu-item" onClick={handleLogout}>
+                        <AiOutlineLogout size={20} />
+                        Sair
+                    </li>
+                }
             </ul>
         </div>
     )

@@ -6,12 +6,14 @@ import Menu from "../menu/Menu"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setFilteredCat, setSearchedProd } from "../../services/productsSlice"
+import { logout } from "../../services/userSlice"
 
 export default function NavBar({ setInsertingCep, insertingCep }) {
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [menuOpened, setMenuOpened] = useState(false)
     const [searchProd, setSearchProd] = useState("")
     const filteredCat = useSelector(data => data.products.filteredCat)
+    const user = useSelector(data => data.user.user)
     const cep = useSelector(data => data.app.cep)
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -41,6 +43,11 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
 
     function handleChangeSearchProd(prod) {
         setSearchProd(prod)
+    }
+
+    function handleLogout() {
+        dispatch(logout())
+        navigate("/")
     }
 
 
@@ -106,8 +113,17 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
                     </ul>}
                 </div>
                 <nav className="header-nav">
-                    <button className="header-nav-item" onClick={() => navigate("/register")} >Crie sua conta</button>
-                    <button className="header-nav-item" onClick={() => navigate("/login")} >Entrar</button>
+                    {user.isLogged ?
+                        <>
+                            <button className="header-nav-item" onClick={() => navigate("/profile")} >Perfil</button>
+                            <button className="header-nav-item" onClick={handleLogout} >Sair</button>
+                        </>
+                        :
+                        <>
+                            <button className="header-nav-item" onClick={() => navigate("/register")} >Crie sua conta</button>
+                            <button className="header-nav-item" onClick={() => navigate("/login")} >Entrar</button>
+                        </>
+                    }
                     <button className="header-nav-item" onClick={() => navigate("/minhas-compras")} >Compras</button>
                     <button className="header-nav-cart" onClick={() => navigate("/carrinho")}>
                         <AiOutlineShoppingCart size={16} style={{ pointerEvents: "none" }} />

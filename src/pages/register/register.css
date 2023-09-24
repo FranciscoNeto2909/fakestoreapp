@@ -3,22 +3,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 8px;
 }
 
 .register-container {
     min-width: 320px;
     width: 500px;
     background-color: #FFF;
-    padding: 24px;
+    padding: 20px 24px 4px 24px;
     border-radius: 4px;
     box-shadow: 0 0 4px #0003;
 }
 
 .register-container h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .register-form {
@@ -126,6 +126,10 @@
 }
 
 @media (max-width:500px) {
+    .register {
+        margin-top: 24px;
+    }
+
     .register-container {
         width: 90%;
         padding: 18px 12px;
