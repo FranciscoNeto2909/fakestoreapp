@@ -12,11 +12,11 @@ import PurchasedProducts from './pages/purchase/PurchasedProducts';
 import Promotions from "./pages/promotion/Promotions"
 import Sale from "./pages/sale/Sale"
 import Product from './pages/Product/Product';
+import Profile from './pages/profile/Profile';
 import Header from './components/header/Header';
 import Message from './components/Message';
 import CepForm from './components/cepForm/CepForm';
 import './App.css';
-import Profile from './components/profile/Profile';
 
 export default function App() {
   const isMsg = useSelector(data => data.app.isMessage)

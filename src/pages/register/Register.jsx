@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { createUser } from "../../services/userSlice"
 import Input from "../../components/input/Input"
 import "./register.css"
+import { emailRegex, passwordRegex } from "../../regex/regex"
 
 export default function Register() {
-    const emailRegex = new RegExp("^[_a-z0-9-]+([_a-z0-9-]+)*@[a-z0-9-]+([a-z0-9-]+).([a-z]{2,3})$")
-    const passwordRegex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$")
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
 

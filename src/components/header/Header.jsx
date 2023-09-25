@@ -6,7 +6,6 @@ import Menu from "../menu/Menu"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setFilteredCat, setSearchedProd } from "../../services/productsSlice"
-import { logout } from "../../services/userSlice"
 
 export default function NavBar({ setInsertingCep, insertingCep }) {
     const [dropdownOpened, setDropdownOpened] = useState(false)
@@ -43,11 +42,6 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
 
     function handleChangeSearchProd(prod) {
         setSearchProd(prod)
-    }
-
-    function handleLogout() {
-        dispatch(logout())
-        navigate("/")
     }
 
 
@@ -116,7 +110,6 @@ export default function NavBar({ setInsertingCep, insertingCep }) {
                     {user.isLogged ?
                         <>
                             <button className="header-nav-item" onClick={() => navigate("/profile")} >Perfil</button>
-                            <button className="header-nav-item" onClick={handleLogout} >Sair</button>
                         </>
                         :
                         <>

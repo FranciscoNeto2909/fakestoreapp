@@ -59,6 +59,11 @@
     bottom: 0;
 }
 
+.login-unexistentAccont-focus {
+    color: #00f;
+    font-size: 16px;
+    font-weight: bolder;
+}
 
 @media (max-width:500px) {
     .login-container {

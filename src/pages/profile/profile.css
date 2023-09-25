@@ -1,0 +1,127 @@
+.profile {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile-container {
+    min-height: 250px;
+    width: 500px;
+    padding: 24px;
+    background-color: #fff;
+    box-shadow: 0 0 4px #0003;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-title {
+    font-size: 22px;
+    margin: 24px 0;
+}
+
+.profile-data {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.profile-data-name {
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.profile-updateData {
+    margin: 18px 0;
+    display: flex;
+}
+
+.profile-updateBtn {
+    width: 300px;
+    padding: 8px 4px;
+    border: none;
+    background-color: #036eb5;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 400;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-buttons button,
+.profile-form-buttons button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: #0000ff22;
+    cursor: pointer;
+
+}
+
+.profile-btn-delete {
+    background-color: #f00 !important;
+    color: #fff;
+}
+
+.profile-btn-logout {
+    color: #f00b;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.profile-form-btnCancel {
+    color: #f00b;
+}
+
+.profile-form-btnUpdate {
+    background-color: rgb(0, 89, 255) !important;
+    color: #fff;
+}
+
+@media (max-width:500px) {
+    .profile-container {
+        width: 90%;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width:350px) {
+    .profile-data {
+        font-size: 16px;
+    }
+
+    .profile-data {
+        width: 100%;
+    }
+
+    .profile-updateBtn {
+        width: 245px;
+    }
+
+    .profile-buttons {
+        width: 245px;
+    }
+}

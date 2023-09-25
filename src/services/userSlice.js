@@ -18,21 +18,28 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         login(state) {
-            localStorage.setItem("user", JSON.stringify({ ...state.user, islogged: false }))
+            localStorage.setItem("user", JSON.stringify({ ...state.user, isLogged: false }))
             return { ...state, user: { ...state.user, isLogged: true } }
         },
         logout(state) {
-            console.log("logout")
             localStorage.setItem("user", JSON.stringify({ ...state.user, isLogged: false }))
             return { ...state, user: { ...state.user, isLogged: false } }
 
         },
         createUser(state, { payload }) {
             return { ...state, user: payload }
+        },
+        deleteUser(state) {
+            localStorage.clear()
+            return { ...state, user: initialUser }
+        },
+        updateUser(state, { payload }) {
+            localStorage.setItem("user", JSON.stringify({ ...payload, isLogged: true }))
+            return { ...state, user: { ...payload, isLogged: true } }
         }
     }
 })
 
-export const { login, logout, createUser } = userSlice.actions
+export const { login, logout, createUser, deleteUser, updateUser } = userSlice.actions
 
 export default userSlice.reducer
